@@ -1,0 +1,2854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Solar panels, inverters and complete systems for your home. See how solar works and calculate your savings.">
+    <meta name="theme-color" content="#079b72">
+    <title>SolarShop</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+<div id="solarshop-hero">
+<!-- =========================================================
+     SOLARSHOP HERO — ELEMENTOR HTML WIDGET
+     BEFORE PUBLISHING, EDIT 2 THINGS:
+     1) CSS  : --hero-bg:url("...")   -> OPTIONAL fallback image (shown only if WebGL is unavailable)
+     2) HTML : <img src="logo.png">   -> full URL of logo
+     (Media Library > open image > copy "File URL")
+     Hero background image ratio must be about 1672 x 801 (2.09 : 1)
+========================================================= -->
+
+
+<style>
+/* =========================================================
+   SOLARSHOP HERO — CLEAN CSS
+   Breakpoints (used everywhere, nothing else):
+   Desktop  : 1201px and up
+   Tablet   : 851px – 1200px
+   Mobile   : up to 850px
+   Small    : up to 480px
+========================================================= */
+
+
+/* =========================================================
+   1. BASE & TOKENS
+========================================================= */
+
+#solarshop-hero,
+#solarshop-hero *{
+    box-sizing:border-box;
+}
+
+#solarshop-hero{
+    --green:#079b72;
+    --green-dark:#087f61;
+    --green-light:#e9f8f3;
+    --blue:#087fdc;
+    --navy:#092b4c;
+    --text:#173a5d;
+    --yellow:#ffc400;
+    --white:#ffffff;
+
+    /* Fonts: Archivo = headings | Manrope = text | IBM Plex Mono = labels */
+    --font-head:Archivo,Manrope,Arial,sans-serif;
+    --font-body:Manrope,system-ui,Arial,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+
+    /* >>> PASTE YOUR MEDIA LIBRARY URL OF THE HERO BACKGROUND HERE <<< */
+    --hero-bg:url("img/hero-bg.png");
+
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    font-family:var(--font-body);
+    color:var(--text);
+    background:#f8fcfb;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+
+/* =========================================================
+   2. TOP BAR
+========================================================= */
+
+#solarshop-hero .solar-topbar{
+    position:relative;
+    z-index:50;
+    height:56px;
+    padding:0 4.7%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:linear-gradient(
+        90deg,
+        rgba(246,252,249,.98) 0%,
+        rgba(237,248,245,.97) 50%,
+        rgba(246,252,249,.98) 100%
+    );
+    border-bottom:1px solid rgba(12,143,105,.10);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.9) inset,
+        0 4px 18px rgba(12,102,82,.035);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+#solarshop-hero .top-left,
+#solarshop-hero .top-right{
+    display:flex;
+    align-items:center;
+}
+
+#solarshop-hero .top-item{
+    position:relative;
+    min-height:56px;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:13.5px;
+    font-weight:650;
+    letter-spacing:.01em;
+    line-height:1;
+    white-space:nowrap;
+    color:#164766;
+
+    transition:color .3s ease, transform .3s ease;
+}
+
+#solarshop-hero .top-item:first-child{
+    padding-left:0;
+}
+
+#solarshop-hero .top-item + .top-item{
+    border-left:1px solid rgba(12,102,82,.13);
+}
+
+/* hover underline */
+#solarshop-hero .top-item::after{
+    content:"";
+    position:absolute;
+    left:25px;
+    right:25px;
+    bottom:0;
+    height:2px;
+    border-radius:10px 10px 0 0;
+    background:linear-gradient(90deg,#0c8f69,#20b889);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+#solarshop-hero .top-item:first-child::after{
+    left:0;
+}
+
+#solarshop-hero .top-item:hover{
+    color:var(--green-dark);
+    transform:translateY(-1px);
+}
+
+#solarshop-hero .top-item:hover::after{
+    transform:scaleX(1);
+}
+
+#solarshop-hero .top-icon{
+    position:relative;
+    flex:0 0 23px;
+    width:23px;
+    height:23px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--green);
+    transition:color .3s ease, transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* soft icon glow */
+#solarshop-hero .top-icon::before{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border-radius:50%;
+    background:rgba(12,143,105,.07);
+    opacity:0;
+    transform:scale(.65);
+    transition:transform .35s ease, opacity .35s ease;
+}
+
+#solarshop-hero .top-icon > *{
+    position:relative;
+    z-index:2;
+}
+
+#solarshop-hero .top-item:hover .top-icon{
+    color:var(--green-dark);
+    transform:translateY(-1px) scale(1.06);
+}
+
+#solarshop-hero .top-item:hover .top-icon::before{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+/* =========================================================
+   3. NAVBAR
+========================================================= */
+
+#solarshop-hero .solar-nav{
+    position:relative;
+    z-index:60;
+    height:88px;
+    padding:0 4.7%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid rgba(9,43,76,.07);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.9) inset,
+        0 8px 30px rgba(9,43,76,.035);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+}
+
+/* subtle top highlight */
+#solarshop-hero .solar-nav::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:4.7%;
+    right:4.7%;
+    height:1px;
+    pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(12,143,105,.15),transparent);
+}
+
+/* logo */
+#solarshop-hero .solar-logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+    width:330px;
+}
+
+#solarshop-hero .solar-logo img{
+    display:block;
+    width:180px;
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+    transform-origin:left center;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), filter .35s ease;
+}
+
+#solarshop-hero .solar-logo:hover img{
+    transform:scale(1.025);
+    filter:brightness(1.02);
+}
+
+/* menu */
+#solarshop-hero .solar-menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:42px;
+    height:100%;
+}
+
+#solarshop-hero .solar-menu a{
+    position:relative;
+    height:100%;
+    display:flex;
+    align-items:center;
+
+    font-size:15px;
+    font-weight:650;
+    letter-spacing:.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    color:#092e4f;
+
+    transition:color .3s ease, transform .3s ease;
+}
+
+#solarshop-hero .solar-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:17px;
+    height:3px;
+    border-radius:20px;
+    opacity:0;
+    background:linear-gradient(90deg,var(--green),#20b889);
+    box-shadow:0 2px 8px rgba(12,143,105,.18);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+
+#solarshop-hero .solar-menu a:hover,
+#solarshop-hero .solar-menu a.active{
+    color:var(--green);
+}
+
+#solarshop-hero .solar-menu a.active{
+    font-weight:700;
+}
+
+#solarshop-hero .solar-menu a:hover{
+    transform:translateY(-1px);
+}
+
+#solarshop-hero .solar-menu a:hover::after,
+#solarshop-hero .solar-menu a.active::after{
+    opacity:1;
+    transform:scaleX(1);
+}
+
+/* actions */
+#solarshop-hero .nav-actions{
+    flex-shrink:0;
+    width:250px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:18px;
+}
+
+#solarshop-hero .nav-icon{
+    position:relative;
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:#082d50;
+    cursor:pointer;
+    transition:color .3s ease, transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+#solarshop-hero .nav-icon::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:rgba(12,143,105,.06);
+    opacity:0;
+    transform:scale(.65);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+}
+
+#solarshop-hero .nav-icon svg{
+    position:relative;
+    z-index:2;
+}
+
+#solarshop-hero .nav-icon:hover{
+    color:var(--green);
+    transform:translateY(-2px);
+}
+
+#solarshop-hero .nav-icon:hover::before{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* cart */
+#solarshop-hero .cart-count{
+    position:absolute;
+    top:-2px;
+    right:-2px;
+    z-index:3;
+    width:19px;
+    height:19px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:10px;
+    font-weight:800;
+    line-height:1;
+    color:#fff;
+
+    background:linear-gradient(135deg,#0c8f69,#18ae82);
+    border:2px solid #fff;
+    border-radius:50%;
+    box-shadow:0 3px 9px rgba(12,143,105,.25);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+#solarshop-hero .cart-icon:hover .cart-count{
+    transform:scale(1.12);
+    box-shadow:0 5px 14px rgba(12,143,105,.32);
+}
+
+
+/* =========================================================
+   4. HERO — LAYOUT & BACKGROUND
+   Desktop height follows the design image ratio (1672 : 801)
+   so the animation lines up with the picture.
+========================================================= */
+
+#solarshop-hero .hero-main {
+    position: relative;
+    aspect-ratio: 1672 / 801;
+    min-height: 540px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #87CEEB;
+}
+
+#solarshop-hero .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        var(--hero-bg),
+        linear-gradient(180deg, #87CEEB 0%, #dff4ff 100%);
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.015);
+    will-change: transform;
+    animation: solarHeroReveal 1.4s ease-out both;
+}
+
+#solarshop-hero .hero-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,.12) 0%,
+        rgba(255,255,255,.05) 40%,
+        transparent 100%
+    );
+}
+/* readability + light overlay */
+#solarshop-hero .hero-background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.99) 0%,
+            rgba(255,255,255,.97) 18%,
+            rgba(255,255,255,.90) 32%,
+            rgba(255,255,255,.68) 44%,
+            rgba(255,255,255,.30) 57%,
+            rgba(255,255,255,.06) 73%,
+            transparent 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.18) 0%,
+            transparent 25%,
+            transparent 76%,
+            rgba(246,251,249,.20) 100%
+        );
+}
+
+/* soft green ambient light */
+#solarshop-hero .hero-main::before{
+    content:"";
+    position:absolute;
+    top:-180px;
+    left:-180px;
+    z-index:-1;
+    width:600px;
+    height:600px;
+    pointer-events:none;
+    filter:blur(35px);
+    background:radial-gradient(
+        circle,
+        rgba(35,174,125,.075) 0%,
+        rgba(35,174,125,.035) 38%,
+        transparent 72%
+    );
+}
+
+/* subtle depth */
+#solarshop-hero .hero-main::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+    background:linear-gradient(
+        115deg,
+        rgba(255,255,255,.12) 0%,
+        transparent 45%,
+        rgba(4,37,57,.035) 100%
+    );
+}
+
+
+/* =========================================================
+   5. HERO — CONTENT
+========================================================= */
+
+#solarshop-hero .hero-content{
+    position:relative;
+    z-index:20;
+    width:50%;
+    padding:68px 0 50px 4.7%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+/* badge */
+#solarshop-hero .hero-badge{
+    position:relative;
+    min-height:42px;
+    padding:10px 18px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0;
+    color:#066b50;
+
+    background:linear-gradient(135deg,rgba(232,249,243,.96),rgba(245,253,250,.86));
+    border:1px solid rgba(12,143,105,.12);
+    border-radius:30px;
+    box-shadow:
+        0 8px 24px rgba(7,155,114,.08),
+        0 1px 0 rgba(255,255,255,.9) inset;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    animation:solarRise .9s cubic-bezier(.22,1,.36,1) both;
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease;
+}
+
+#solarshop-hero .hero-badge::before{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:inherit;
+    opacity:0;
+    background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.65) 50%,transparent 75%);
+    background-size:220% 100%;
+    transition:opacity .3s ease;
+}
+
+#solarshop-hero .hero-badge:hover{
+    transform:translateY(-2px);
+    border-color:rgba(12,143,105,.22);
+    box-shadow:
+        0 13px 30px rgba(7,155,114,.13),
+        0 1px 0 rgba(255,255,255,.95) inset;
+}
+
+#solarshop-hero .hero-badge:hover::before{
+    opacity:1;
+    animation:solarBadgeShine 1s ease;
+}
+
+#solarshop-hero .hero-badge svg{
+    flex:0 0 19px;
+    width:19px;
+    height:19px;
+    color:var(--green);
+    filter:drop-shadow(0 2px 4px rgba(7,155,114,.14));
+    transition:transform .35s ease;
+}
+
+#solarshop-hero .hero-badge:hover svg{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+/* title */
+#solarshop-hero .hero-title{
+    margin:25px 0 17px;
+    font-family:var(--font-head);
+    font-size:clamp(40px,4.8vw,82px);
+    font-weight:800;
+    line-height:.97;
+    letter-spacing:-.045em;
+    color:#092c4c;
+    text-wrap:balance;
+
+    animation:solarRise .9s .08s cubic-bezier(.22,1,.36,1) both;
+}
+
+#solarshop-hero .hero-title .green,
+#solarshop-hero .hero-title .blue{
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+#solarshop-hero .hero-title .green{
+    color:#168e2d;
+    background-image:linear-gradient(135deg,#168e2d 0%,#18a23a 55%,#0c8128 100%);
+    filter:drop-shadow(0 3px 8px rgba(22,142,45,.08));
+}
+
+#solarshop-hero .hero-title .blue{
+    color:#0586df;
+    background-image:linear-gradient(135deg,#057acb 0%,#0697ed 55%,#056fbd 100%);
+    filter:drop-shadow(0 3px 8px rgba(5,134,223,.08));
+}
+
+/* description */
+#solarshop-hero .hero-description{
+    max-width:590px;
+    margin:0 0 34px;
+    font-size:18px;
+    font-weight:500;
+    line-height:1.62;
+    letter-spacing:-.1px;
+    color:#496786;
+    text-wrap:pretty;
+
+    animation:solarRise .9s .16s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* buttons */
+#solarshop-hero .hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:16px;
+
+    animation:solarRise .9s .24s cubic-bezier(.22,1,.36,1) both;
+}
+
+#solarshop-hero .solar-btn{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    height:56px;
+    padding:0 clamp(20px,1.75vw,29px);
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:13px;
+
+    font-size:clamp(13.5px,1vw,15px);
+    font-weight:800;
+    letter-spacing:.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    cursor:pointer;
+    border-radius:30px;
+
+    transition:
+        transform .35s cubic-bezier(.22,1,.36,1),
+        box-shadow .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+}
+
+#solarshop-hero .solar-btn > *{
+    position:relative;
+    z-index:3;
+}
+
+#solarshop-hero .solar-btn svg{
+    flex:0 0 18px;
+    width:18px;
+    height:18px;
+    transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+#solarshop-hero .solar-btn:hover svg{
+    transform:translateX(3px);
+}
+
+/* primary */
+#solarshop-hero .solar-btn.primary{
+    color:#fff;
+    background:linear-gradient(135deg,#079e73 0%,#07966f 55%,#058a67 100%);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 12px 28px rgba(7,155,114,.23),
+        0 2px 0 rgba(255,255,255,.12) inset;
+}
+
+#solarshop-hero .solar-btn.primary::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    z-index:1;
+    width:70%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+    transform:skewX(-18deg);
+    transition:left .7s ease;
+}
+
+#solarshop-hero .solar-btn.primary:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 18px 38px rgba(7,155,114,.30),
+        0 2px 0 rgba(255,255,255,.15) inset;
+}
+
+#solarshop-hero .solar-btn.primary:hover::before{
+    left:140%;
+}
+
+#solarshop-hero .solar-btn.primary:active{
+    transform:translateY(-1px);
+}
+
+/* secondary */
+#solarshop-hero .solar-btn.secondary{
+    color:#078f6a;
+    background:rgba(255,255,255,.76);
+    border:1.5px solid rgba(18,166,126,.65);
+    box-shadow:
+        0 8px 22px rgba(8,82,66,.055),
+        0 1px 0 rgba(255,255,255,.9) inset;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+
+#solarshop-hero .solar-btn.secondary::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    border-radius:inherit;
+    opacity:0;
+    background:linear-gradient(135deg,#079e73,#078f69);
+    transform:scale(.82);
+    transition:transform .4s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+}
+
+#solarshop-hero .solar-btn.secondary:hover{
+    color:#fff;
+    border-color:var(--green);
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px rgba(7,155,114,.20);
+}
+
+#solarshop-hero .solar-btn.secondary:hover::before{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+/* =========================================================
+   6. SOLAR STORY ANIMATION
+   Design coordinate system: 1 unit = 1px of the 1672px design.
+   Story: sun > Sunlight > 4 rays > Solar Panels > arrow >
+          Inverter > arrow > Your Home > Save More
+========================================================= */
+
+#solarshop-hero .solar-stage{
+    position:absolute;
+    inset:0;
+    z-index:10;
+    pointer-events:none;
+    container-type:inline-size;
+}
+
+#solarshop-hero .scene{
+    --u:calc(100cqw / 1672);
+    position:absolute;
+    inset:0;
+}
+
+
+/* ---------- process cards (compact) ---------- */
+
+#solarshop-hero .process-card{
+    position:absolute;
+    z-index:25;
+    padding:calc(var(--u) * 9) calc(var(--u) * 15) calc(var(--u) * 9) calc(var(--u) * 24);
+
+    display:flex;
+    align-items:center;
+    gap:calc(var(--u) * 9);
+
+    white-space:nowrap;
+    background:rgba(255,255,255,.95);
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:calc(var(--u) * 17);
+    box-shadow:
+        0 calc(var(--u) * 10) calc(var(--u) * 26) rgba(18,64,91,.13),
+        0 2px 6px rgba(18,64,91,.05);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    opacity:0;
+    transform:translateY(16px) scale(.88);
+}
+
+#solarshop-hero .process-number{
+    position:absolute;
+    left:calc(var(--u) * -10);
+    top:calc(var(--u) * -9);
+    width:calc(var(--u) * 24);
+    height:calc(var(--u) * 24);
+    min-width:16px;
+    min-height:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:var(--font-mono);
+    font-size:max(8px, calc(var(--u) * 12));
+    font-weight:500;
+    color:#fff;
+
+    background:#078c69;
+    border-radius:50%;
+    box-shadow:0 0 0 2px #fff;
+}
+
+#solarshop-hero .process-icon{
+    flex:0 0 auto;
+    width:calc(var(--u) * 30);
+    height:calc(var(--u) * 30);
+    min-width:20px;
+    min-height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#solarshop-hero .process-icon svg{
+    width:100%;
+    height:100%;
+}
+
+#solarshop-hero .process-text{
+    display:flex;
+    flex-direction:column;
+    gap:calc(var(--u) * 3);
+}
+
+#solarshop-hero .process-title{
+    font-family:var(--font-head);
+    font-size:max(9px, calc(var(--u) * 12.5));
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    color:#123a5d;
+}
+
+#solarshop-hero .process-sub{
+    font-size:max(7.5px, calc(var(--u) * 9.3));
+    font-weight:550;
+    line-height:1.25;
+    color:#65809b;
+}
+
+
+/* =========================================================
+   7. BOTTOM BENEFITS
+========================================================= */
+
+#solarshop-hero .benefits{
+    position:absolute;
+    z-index:40;
+    left:0;
+    right:0;
+    bottom:0;
+    min-height:160px;
+    padding:30px 6.5%;
+    isolation:isolate;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    align-items:center;
+
+    background:radial-gradient(
+        ellipse at 50% 15%,
+        rgba(255,255,255,1) 0%,
+        rgba(252,255,254,.99) 42%,
+        rgba(244,252,249,.98) 100%
+    );
+    border-top:1px solid rgba(12,143,105,.08);
+    border-radius:50% 50% 0 0 / 25% 25% 0 0;
+    box-shadow:
+        0 -12px 35px rgba(18,87,70,.055),
+        0 -1px 0 rgba(255,255,255,.95) inset;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+}
+
+#solarshop-hero .benefits::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:12%;
+    right:12%;
+    height:1px;
+    pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(12,143,105,.18),transparent);
+}
+
+#solarshop-hero .benefit{
+    position:relative;
+    min-height:66px;
+    padding:0 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:17px;
+
+    transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+#solarshop-hero .benefit + .benefit{
+    border-left:1px solid rgba(13,139,104,.13);
+}
+
+#solarshop-hero .benefit:hover{
+    transform:translateY(-3px);
+}
+
+#solarshop-hero .benefit-icon{
+    position:relative;
+    flex:0 0 62px;
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--green);
+    background:linear-gradient(145deg,#edf9f5 0%,#e1f6ef 100%);
+    border:1px solid rgba(12,143,105,.18);
+    border-radius:50%;
+    box-shadow:
+        0 8px 20px rgba(7,155,114,.075),
+        0 1px 0 rgba(255,255,255,.95) inset;
+
+    transition:
+        transform .4s cubic-bezier(.22,1,.36,1),
+        box-shadow .4s ease,
+        background .4s ease,
+        color .3s ease;
+}
+
+#solarshop-hero .benefit-icon::before{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border:1px solid rgba(12,143,105,.10);
+    border-radius:50%;
+    opacity:0;
+    transform:scale(.85);
+    transition:transform .4s ease, opacity .35s ease;
+}
+
+#solarshop-hero .benefit-icon svg{
+    position:relative;
+    z-index:2;
+    width:30px;
+    height:30px;
+    transition:transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+#solarshop-hero .benefit:hover .benefit-icon{
+    color:#058b67;
+    background:linear-gradient(145deg,#e5f8f1,#d8f3ea);
+    transform:translateY(-2px) scale(1.06);
+    box-shadow:
+        0 13px 28px rgba(7,155,114,.13),
+        0 1px 0 rgba(255,255,255,1) inset;
+}
+
+#solarshop-hero .benefit:hover .benefit-icon::before{
+    opacity:1;
+    transform:scale(1);
+}
+
+#solarshop-hero .benefit:hover .benefit-icon svg{
+    transform:scale(1.08);
+}
+
+#solarshop-hero .benefit-text{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+#solarshop-hero .benefit-title{
+    font-family:var(--font-head);
+    font-size:15.5px;
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+    color:#123b5d;
+    transition:color .3s ease;
+}
+
+#solarshop-hero .benefit-sub{
+    font-size:12.5px;
+    font-weight:500;
+    line-height:1.4;
+    white-space:nowrap;
+    color:#67829a;
+    transition:color .3s ease;
+}
+
+#solarshop-hero .benefit:hover .benefit-title{ color:var(--green-dark); }
+#solarshop-hero .benefit:hover .benefit-sub  { color:#58748c; }
+
+
+/* =========================================================
+   8. KEYFRAMES (each one defined once)
+========================================================= */
+
+@keyframes solarHeroReveal{
+    from{ opacity:.65; transform:scale(1.045); }
+    to  { opacity:1;   transform:scale(1.015); }
+}
+
+@keyframes solarRise{
+    from{ opacity:0; transform:translateY(18px); }
+    to  { opacity:1; transform:translateY(0); }
+}
+
+@keyframes solarBadgeShine{
+    from{ background-position:120% 0; }
+    to  { background-position:-120% 0; }
+}
+
+
+/* =========================================================
+   9. RESPONSIVE — TABLET  (851px – 1200px)
+   The picture + animation keep the design ratio at the top;
+   text sits on the left, benefits stay at the bottom.
+========================================================= */
+
+@media (max-width:1200px){
+
+    /* top bar */
+    #solarshop-hero .solar-topbar{ padding:0 3%; }
+    #solarshop-hero .top-item{ padding:0 14px; font-size:12px; }
+    #solarshop-hero .top-item::after{ left:14px; right:14px; }
+    #solarshop-hero .top-right .top-item:last-child{ display:none; }
+    #solarshop-hero .top-item:first-child::after{ left:0; }
+
+    /* navbar */
+    #solarshop-hero .solar-nav{ padding:0 3%; }
+    #solarshop-hero .solar-nav::before{ left:3%; right:3%; }
+    #solarshop-hero .solar-logo{ width:200px; }
+    #solarshop-hero .solar-logo img{ width:160px; }
+    #solarshop-hero .solar-menu{ gap:24px; }
+    #solarshop-hero .solar-menu a{ font-size:14px; }
+    #solarshop-hero .nav-actions{ width:150px; gap:12px; }
+
+    /* hero: height follows the content, image + stage stay on the design ratio */
+    #solarshop-hero .hero-main{
+        aspect-ratio:auto;
+        min-height:0;
+    }
+
+    #solarshop-hero .hero-background{
+        inset:0 0 auto 0;
+        aspect-ratio:1672 / 801;
+        background-position:center top;
+        -webkit-mask-image:linear-gradient(#000 82%,transparent 100%);
+        mask-image:linear-gradient(#000 82%,transparent 100%);
+    }
+
+    #solarshop-hero .solar-stage{
+        inset:0 0 auto 0;
+        aspect-ratio:1672 / 801;
+    }
+
+    #solarshop-hero .hero-content{
+        padding:56px 0 195px 4%;
+    }
+
+    #solarshop-hero .hero-description{
+        max-width:100%;
+        font-size:16px;
+        margin-bottom:28px;
+    }
+
+    #solarshop-hero .hero-buttons{ gap:12px; }
+
+    #solarshop-hero .solar-btn{
+        height:52px;
+        padding:0 22px;
+        font-size:14px;
+    }
+
+    /* benefits */
+    #solarshop-hero .benefits{
+        min-height:145px;
+        padding:27px 3%;
+    }
+
+    #solarshop-hero .benefit{ gap:12px; padding:0 14px; }
+    #solarshop-hero .benefit-icon{ flex-basis:54px; width:54px; height:54px; }
+    #solarshop-hero .benefit-icon svg{ width:26px; height:26px; }
+    #solarshop-hero .benefit-title{ font-size:14px; }
+    #solarshop-hero .benefit-sub{ font-size:11.5px; white-space:normal; }
+}
+
+
+/* =========================================================
+   10. RESPONSIVE — MOBILE  (up to 850px)
+   Stacked: text > animation story > benefits
+========================================================= */
+
+@media (max-width:850px){
+
+    #solarshop-hero .solar-topbar{ display:none; }
+
+    /* navbar */
+    #solarshop-hero .solar-nav{ height:72px; padding:0 20px; }
+    #solarshop-hero .solar-nav::before{ left:20px; right:20px; }
+    #solarshop-hero .solar-menu{ display:none; }
+    #solarshop-hero .solar-logo{ width:auto; }
+    #solarshop-hero .solar-logo img{ width:140px; }
+    #solarshop-hero .nav-actions{ width:auto; gap:8px; }
+    #solarshop-hero .nav-icon{ width:38px; height:38px; }
+    #solarshop-hero .cart-count{ top:-1px; right:-1px; width:18px; height:18px; font-size:9px; }
+
+    /* hero stack */
+    #solarshop-hero .hero-main{
+        display:flex;
+        flex-direction:column;
+    }
+
+    #solarshop-hero .hero-background{
+        inset:0;
+        aspect-ratio:auto;
+        background-position:62% center;
+        -webkit-mask-image:none;
+        mask-image:none;
+    }
+
+    #solarshop-hero .hero-background::after{
+        background:linear-gradient(
+            180deg,
+            rgba(255,255,255,.98) 0%,
+            rgba(255,255,255,.90) 37%,
+            rgba(255,255,255,.18) 63%,
+            rgba(255,255,255,0) 100%
+        );
+    }
+
+    #solarshop-hero .hero-content{
+        width:100%;
+        padding:42px 22px 18px;
+        align-items:center;
+        text-align:center;
+    }
+
+    #solarshop-hero .hero-badge{ font-size:12.5px; padding:9px 14px; }
+    #solarshop-hero .hero-badge svg{ width:17px; height:17px; flex-basis:17px; }
+
+    #solarshop-hero .hero-title{
+        margin-top:21px;
+        font-size:clamp(38px,11.5vw,56px);
+        line-height:1;
+        letter-spacing:-.04em;
+    }
+
+    #solarshop-hero .hero-description{
+        margin:0 auto 26px;
+        font-size:16px;
+        line-height:1.58;
+    }
+
+    #solarshop-hero .hero-buttons{ width:100%; justify-content:center; }
+
+    /* animation: simple stacked story */
+    #solarshop-hero .solar-stage{
+        position:relative;
+        inset:auto;
+        width:100%;
+        height:470px;
+        aspect-ratio:auto;
+        container-type:normal;
+    }
+
+    #solarshop-hero .scene{ --u:min(1.2px, calc(100vw / 400)); }
+
+    /* benefits */
+    #solarshop-hero .benefits{
+        position:relative;
+        left:auto;
+        right:auto;
+        bottom:auto;
+        min-height:0;
+        padding:24px 16px;
+        grid-template-columns:repeat(2,1fr);
+        border-radius:28px 28px 0 0;
+        box-shadow:0 -8px 28px rgba(18,87,70,.055);
+    }
+
+    #solarshop-hero .benefit{
+        min-height:78px;
+        padding:12px 14px;
+        gap:12px;
+        justify-content:flex-start;
+    }
+
+    #solarshop-hero .benefit:nth-child(3){ border-left:0; }
+    #solarshop-hero .benefit:nth-child(n+3){ border-top:1px solid rgba(13,139,104,.10); }
+
+    #solarshop-hero .benefit-icon{ flex-basis:48px; width:48px; height:48px; }
+    #solarshop-hero .benefit-icon svg{ width:23px; height:23px; }
+    #solarshop-hero .benefit-title{ font-size:13px; }
+    #solarshop-hero .benefit-sub{ font-size:10.5px; white-space:normal; }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE — SMALL PHONES  (up to 480px)
+========================================================= */
+
+@media (max-width:480px){
+
+    #solarshop-hero .solar-nav{ height:66px; padding:0 15px; }
+    #solarshop-hero .solar-nav::before{ left:15px; right:15px; }
+    #solarshop-hero .solar-logo img{ width:125px; }
+    #solarshop-hero .nav-actions{ gap:4px; }
+    #solarshop-hero .nav-icon{ width:35px; height:35px; }
+    #solarshop-hero .nav-icon.search-icon{ display:none; }
+
+    #solarshop-hero .hero-content{ padding:38px 18px 14px; }
+    #solarshop-hero .hero-description{ font-size:15px; }
+
+    #solarshop-hero .hero-buttons{ flex-direction:column; align-items:stretch; }
+    #solarshop-hero .solar-btn{ width:100%; height:50px; }
+
+    #solarshop-hero .benefits{
+        grid-template-columns:1fr;
+        padding:16px;
+        border-radius:24px 24px 0 0;
+    }
+
+    #solarshop-hero .benefit{ min-height:68px; padding:9px 5px; }
+    #solarshop-hero .benefit + .benefit{ border-left:0; border-top:1px solid rgba(13,139,104,.10); }
+    #solarshop-hero .benefit-icon{ flex-basis:46px; width:46px; height:46px; }
+    #solarshop-hero .benefit-title{ font-size:13.5px; }
+    #solarshop-hero .benefit-sub{ font-size:11px; }
+}
+
+
+
+
+/* =========================================================
+   6b. 3D CANVAS + STORY CAPTION
+   The 3D scene lives inside .hero-background so it follows
+   every breakpoint rule of the old picture (size, fade mask,
+   white text-fade overlay on top).
+========================================================= */
+
+#solarshop-hero .solar3d{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+    opacity:0;
+    transition:opacity .9s ease;
+}
+
+#solarshop-hero .solar3d.is-ready{ opacity:1; }
+
+/* caption block: one step at a time + progress dots */
+#solarshop-hero .story-ui{
+    position:absolute;
+    z-index:25;
+    top:calc(var(--u) * 34);
+    right:4.7%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:calc(var(--u) * 12);
+}
+
+#solarshop-hero .story-cards{ display:grid; justify-items:end; }
+
+#solarshop-hero .story-cards .process-card{
+    grid-area:1 / 1;
+    position:relative;
+    opacity:0;
+    transform:translateY(10px) scale(.96);
+    transition:opacity .22s ease, transform .22s ease;
+    animation:none;
+}
+
+#solarshop-hero .story-cards .process-card.is-on{
+    opacity:1;
+    transform:none;
+    transition:opacity .5s ease .22s, transform .5s cubic-bezier(.2,.85,.25,1) .22s;
+}
+
+#solarshop-hero .story-dots{ display:flex; gap:7px; padding-right:4px; }
+
+#solarshop-hero .story-dots .sd{
+    width:22px;
+    height:5px;
+    padding:9px 0;
+    box-sizing:content-box;
+    background-clip:content-box;
+    cursor:pointer;
+    border-radius:5px;
+    background-color:rgba(9,43,76,.16);
+    transition:background-color .4s ease, width .4s ease;
+}
+
+#solarshop-hero .story-dots .sd.is-done{ background-color:rgba(7,155,114,.45); }
+#solarshop-hero .story-dots .sd.is-on{ width:38px; background-color:var(--green); }
+#solarshop-hero .story-ui{ pointer-events:auto; }
+#solarshop-hero .story-dots{ align-items:center; }
+
+#solarshop-hero .story-pause{
+    width:24px; height:24px; margin-left:4px; padding:0;
+    border:1px solid rgba(9,43,76,.16); border-radius:50%;
+    background:rgba(255,255,255,.85); color:var(--navy);
+    font-size:8px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .25s ease, color .25s ease;
+}
+#solarshop-hero .story-pause::before{ content:"\275A\275A"; letter-spacing:-1px; }
+#solarshop-hero .story-pause.is-paused::before{ content:"\25B6"; letter-spacing:0; padding-left:1px; }
+#solarshop-hero .story-pause:hover{ background:var(--green); color:#fff; }
+
+/* live stat chips */
+#solarshop-hero .story-stats{
+    display:flex; gap:8px;
+    opacity:0; transform:translateY(8px);
+    transition:opacity .6s ease, transform .6s cubic-bezier(.2,.85,.25,1);
+}
+#solarshop-hero .story-stats.is-on{ opacity:1; transform:none; }
+#solarshop-hero .story-stats .stat{
+    min-width:84px; padding:8px 12px; display:flex; flex-direction:column; gap:2px;
+    background:rgba(255,255,255,.9); border:1px solid rgba(255,255,255,.95); border-radius:14px;
+    box-shadow:0 8px 22px rgba(18,64,91,.12);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+#solarshop-hero .story-stats b{
+    font-family:var(--font-mono); font-size:15px; font-weight:500; color:var(--green-dark); letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;
+}
+#solarshop-hero .story-stats i{ font-style:normal; font-size:9.5px; font-weight:700; color:#65809b; letter-spacing:.02em; }
+#solarshop-hero .story-stats .stat:nth-child(2) b{ color:var(--blue); }
+#solarshop-hero .story-stats .stat:nth-child(3) b{ color:#d99a00; }
+
+
+@media (max-width:850px){
+    #solarshop-hero .story-ui{
+        top:8px;
+        right:auto;
+        left:50%;
+        transform:translateX(-50%);
+        align-items:center;
+    }
+    #solarshop-hero .story-cards{ justify-items:center; }
+    #solarshop-hero .story-dots{ padding-right:0; }
+    #solarshop-hero .story-stats{ gap:6px; }
+    #solarshop-hero .story-stats .stat{ min-width:0; padding:6px 9px; }
+    #solarshop-hero .story-stats b{ font-size:12.5px; }
+    #solarshop-hero .story-stats i{ font-size:8.5px; }
+}
+
+
+/* =========================================================
+   12. ACCESSIBILITY — REDUCED MOTION (one rule for everything)
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    #solarshop-hero *,
+    #solarshop-hero *::before,
+    #solarshop-hero *::after{
+        animation-duration:.01ms !important;
+        animation-delay:0s !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+    #solarshop-hero .hero-background{
+        transform:none;
+    }
+}
+
+/* =========================================================
+   13. REFINEMENTS (v2): accessibility, contrast, mobile menu
+========================================================= */
+#solarshop-hero :focus-visible{ outline:3px solid var(--blue); outline-offset:3px; border-radius:8px; }
+#solarshop-hero .skip-link{ position:absolute; left:-9999px; top:10px; z-index:100; padding:12px 18px; font-weight:700; color:#fff; background:var(--navy); border-radius:10px; }
+#solarshop-hero .skip-link:focus{ left:16px; }
+#solarshop-hero .logo-text{ font:800 27px/1 var(--font-head); letter-spacing:-.03em; color:var(--navy); }
+
+/* headline: one solid brand colour, no gradient-clipped text */
+#solarshop-hero .hero-title .green{ color:var(--green-dark); background:none; -webkit-text-fill-color:currentColor; filter:none; }
+
+/* contrast (WCAG AA) */
+#solarshop-hero .solar-btn.primary{ background:linear-gradient(135deg,#078a66 0%,#06745a 100%); }
+#solarshop-hero .solar-btn.secondary{ color:#066b50; }
+#solarshop-hero .solar-btn.secondary:hover{ color:#fff; }
+#solarshop-hero .process-sub,
+#solarshop-hero .benefit-sub,
+#solarshop-hero .benefit:hover .benefit-sub{ color:#4a647d; }
+
+/* non-clickable items should not behave like links */
+#solarshop-hero .top-item::after{ display:none; }
+#solarshop-hero .top-item:hover{ color:#164766; transform:none; }
+#solarshop-hero .top-item:hover .top-icon,
+#solarshop-hero .benefit:hover,
+#solarshop-hero .benefit:hover .benefit-icon,
+#solarshop-hero .benefit:hover .benefit-icon svg,
+#solarshop-hero .hero-badge:hover,
+#solarshop-hero .hero-badge:hover svg{ transform:none; }
+#solarshop-hero .hero-badge:hover::before{ opacity:0; animation:none; }
+
+/* step dots are real buttons now */
+#solarshop-hero .story-dots .sd{ display:block; border:0; }
+
+/* mobile menu */
+#solarshop-hero .nav-toggle{ display:none; border:0; background:none; padding:0; font:inherit; }
+#solarshop-hero .nav-toggle .x{ display:none; }
+#solarshop-hero .solar-nav.is-open .nav-toggle .x{ display:inline; }
+#solarshop-hero .solar-nav.is-open .nav-toggle .bars{ display:none; }
+
+@media (max-width:850px){
+    #solarshop-hero .nav-toggle{ display:flex; }
+    #solarshop-hero .solar-menu{
+        display:flex; position:absolute; top:100%; left:0; right:0; z-index:70;
+        flex-direction:column; align-items:stretch; gap:0; height:auto;
+        padding:6px 20px 14px; background:#fff;
+        border-bottom:1px solid rgba(9,43,76,.08); box-shadow:0 18px 30px rgba(9,43,76,.10);
+        visibility:hidden; opacity:0; transform:translateY(-8px);
+        transition:opacity .25s ease, transform .25s ease, visibility .25s;
+    }
+    #solarshop-hero .solar-nav.is-open .solar-menu{ visibility:visible; opacity:1; transform:none; }
+    #solarshop-hero .solar-menu a{ height:52px; font-size:16px; border-bottom:1px solid rgba(9,43,76,.06); }
+    #solarshop-hero .solar-menu a:last-child{ border-bottom:0; }
+    #solarshop-hero .solar-menu a::after{ display:none; }
+}
+</style>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<a class="skip-link" href="#solarshop-main">Skip to content</a>
+
+<div class="solar-topbar">
+
+    <div class="top-left">
+
+        <div class="top-item">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20.5 3.5C12 3.7 5.4 7.4 4 14.5c-.7 3.5 1.5 5.8 5 5.1C16.1 18.2 20 12.5 20.5 3.5Z"
+                          fill="currentColor"/>
+                    <path d="M5 19c3.3-4.3 6.5-6.9 10.5-9"
+                          stroke="#fff"
+                          stroke-width="1.5"
+                          stroke-linecap="round"/>
+                </svg>
+            </span>
+            Clean energy for a brighter future
+        </div>
+
+        <div class="top-item">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2 20 5v6c0 5.1-3.2 8.8-8 11-4.8-2.2-8-5.9-8-11V5l8-3Z"
+                          fill="currentColor"/>
+                    <path d="m8.5 12 2.2 2.2 4.8-5"
+                          stroke="#fff"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </span>
+            Save money
+        </div>
+
+        <div class="top-item">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20.5 3.5C12 3.7 5.4 7.4 4 14.5c-.7 3.5 1.5 5.8 5 5.1C16.1 18.2 20 12.5 20.5 3.5Z"
+                          fill="currentColor"/>
+                    <path d="M5 19c3.3-4.3 6.5-6.9 10.5-9"
+                          stroke="#fff"
+                          stroke-width="1.5"
+                          stroke-linecap="round"/>
+                </svg>
+            </span>
+            Protect the planet
+        </div>
+
+    </div>
+
+    <div class="top-right">
+
+        <div class="top-item">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2 20 5v6c0 5.1-3.2 8.8-8 11-4.8-2.2-8-5.9-8-11V5l8-3Z"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+                    <path d="m8.5 12 2.2 2.2 4.8-5"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </span>
+            Trusted solar solutions
+        </div>
+
+        <div class="top-item">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.400 5.600 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            A greener tomorrow
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="solar-nav">
+
+    <a href="#" class="solar-logo">
+        <img src="img/logo.png" alt="SolarShop" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:'SolarShop'}))">
+    </a>
+
+    <nav class="solar-menu" id="solar-menu" aria-label="Main">
+
+        <a href="#" class="active">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">How it works</a>
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <a href="#search" class="nav-icon search-icon" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="7.2"
+                        stroke="currentColor"
+                        stroke-width="2"/>
+                <path d="m16.2 16.2 5 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+        </a>
+
+        <a href="#account" class="nav-icon" aria-label="My account">
+            <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="3.6"
+                        stroke="currentColor"
+                        stroke-width="2"/>
+                <path d="M4.5 21c.6-4.2 3.1-6.3 7.5-6.3s6.9 2.1 7.5 6.3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+        </a>
+
+        <a href="#cart" class="nav-icon cart-icon" aria-label="Cart, 0 items">
+
+            <svg viewBox="0 0 28 28" fill="none">
+                <path d="M3 5h3l2.1 12.1a2 2 0 0 0 2 1.7h9.8a2 2 0 0 0 1.9-1.4L24 9H7"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <circle cx="10" cy="23" r="1.5" fill="currentColor"/>
+                <circle cx="20" cy="23" r="1.5" fill="currentColor"/>
+            </svg>
+
+            <span class="cart-count" aria-hidden="true">0</span>
+
+        </a>
+
+    <button type="button" class="nav-icon nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="solar-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-main" id="solarshop-main">
+
+    <div class="hero-background"></div>
+
+    <!-- LEFT CONTENT -->
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20.5 3.5C12 3.7 5.4 7.4 4 14.5c-.7 3.5 1.5 5.8 5 5.1C16.1 18.2 20 12.5 20.5 3.5Z"
+                      fill="currentColor"/>
+                <path d="M5 19c3.3-4.3 6.5-6.9 10.5-9"
+                      stroke="#fff"
+                      stroke-width="1.5"
+                      stroke-linecap="round"/>
+            </svg>
+
+            Renewable energy solutions
+
+        </div>
+
+
+        <h1 class="hero-title">
+            Turn sunlight<br>
+            <span class="green">into savings</span>
+        </h1>
+
+
+        <p class="hero-description">
+            Generate clean solar energy for your home
+            and take control of your electricity costs.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#how-it-works" class="solar-btn primary">
+                See how solar works
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h13"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"/>
+                    <path d="m13 6 6 6-6 6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+
+            </a>
+
+
+            <a href="#calculator" class="solar-btn secondary">
+
+                Calculate your savings
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="3" width="14" height="18" rx="2"
+                          stroke="currentColor"
+                          stroke-width="1.8"/>
+                    <path d="M8 7h8"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+                    <path d="M8 11h2M14 11h2M8 15h2M14 15h2"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         3D STORY STAGE
+         The 3D scene is drawn on a <canvas> that is created inside
+         .hero-background by the script below. This block only holds
+         the step captions (1 Sunlight > 5 Save Money).
+    ====================================================== -->
+
+    <div class="solar-stage">
+      <div class="scene">
+        <div class="story-ui">
+          <div class="story-cards">
+            <div class="process-card">
+            <span class="process-number">1</span>
+            <span class="process-icon"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" fill="#ffc400"/><path d="M20 3v6M20 31v6M3 20h6M31 20h6M8 8l4 4M28 28l4 4M32 8l-4 4M12 28l-4 4" stroke="#ffc400" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+            <span class="process-text">
+                <span class="process-title">Sunlight</span>
+                <span class="process-sub">Free, natural energy</span>
+            </span>
+        </div>
+            <div class="process-card">
+            <span class="process-number">2</span>
+            <span class="process-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M7 9h25l-3 20H10L7 9Z" fill="#087fdc" stroke="#fff" stroke-width="1.5"/><path d="M13 9l-2 20M20 9v20M27 9l-2 20M8.5 16h22M9.5 23h22" stroke="#fff" stroke-width="1.2"/></svg></span>
+            <span class="process-text">
+                <span class="process-title">Solar panels</span>
+                <span class="process-sub">Capture sunlight<br>to produce DC power</span>
+            </span>
+        </div>
+            <div class="process-card">
+            <span class="process-number">3</span>
+            <span class="process-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M23 3 10 22h9l-2 15 13-21h-9l2-13Z" fill="#11d9ef" stroke="#0aaec5" stroke-width="1"/></svg></span>
+            <span class="process-text">
+                <span class="process-title">Inverter</span>
+                <span class="process-sub">Converts DC to<br>AC power</span>
+            </span>
+        </div>
+            <div class="process-card">
+            <span class="process-number">4</span>
+            <span class="process-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M6 19 20 7l14 12v13H6V19Z" stroke="#087fdc" stroke-width="3" stroke-linejoin="round"/><path d="M16 32V22h8v10" stroke="#087fdc" stroke-width="3"/></svg></span>
+            <span class="process-text">
+                <span class="process-title">Your home</span>
+                <span class="process-sub">Powers your daily life</span>
+            </span>
+        </div>
+            <div class="process-card">
+            <span class="process-number">5</span>
+            <span class="process-icon"><svg viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="11" rx="10" ry="5" fill="#ffc400" stroke="#e8a900" stroke-width="1.5"/><path d="M10 11v7c0 2.8 4.5 5 10 5s10-2.2 10-5v-7" fill="#ffd42b" stroke="#e8a900" stroke-width="1.5"/><path d="M10 18v7c0 2.8 4.5 5 10 5s10-2.2 10-5v-7" fill="#ffca0a" stroke="#e8a900" stroke-width="1.5"/></svg></span>
+            <span class="process-text">
+                <span class="process-title">Save money</span>
+                <span class="process-sub">Lower energy costs</span>
+            </span>
+        </div>
+          </div>
+          <div class="story-dots"><button type="button" class="sd" aria-label="Go to step 1"></button><button type="button" class="sd" aria-label="Go to step 2"></button><button type="button" class="sd" aria-label="Go to step 3"></button><button type="button" class="sd" aria-label="Go to step 4"></button><button type="button" class="sd" aria-label="Go to step 5"></button><button class="story-pause" type="button" aria-label="Pause animation"></button></div>
+          <div class="story-stats">
+            <div class="stat"><b data-stat="kw">0.00</b><i>kW live output</i></div>
+            <div class="stat"><b data-stat="co2">0.0</b><i>kg CO&#8322; saved</i></div>
+            <div class="stat"><b data-stat="bill">0%</b><i>lower bill</i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM BENEFITS
+    ====================================================== -->
+
+    <div class="benefits">
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+
+                <svg viewBox="0 0 32 32" fill="none">
+
+                    <path d="M27 4C16 4.2 7.5 9 6 18c-.8 4.4 2 7.2 6.4 6.4C21 23.3 26.4 16.4 27 4Z"
+                          fill="currentColor"/>
+
+                    <path d="M7 26c4.5-5.8 8.7-9.2 14-12"
+                          stroke="#fff"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+
+                </svg>
+
+            </div>
+
+            <div class="benefit-text">
+
+                <span class="benefit-title">
+                    Clean energy
+                </span>
+
+                <span class="benefit-sub">
+                    100% renewable
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+
+                <svg viewBox="0 0 32 32" fill="none">
+
+                    <ellipse cx="16" cy="8" rx="9" ry="4"
+                             stroke="currentColor"
+                             stroke-width="2"/>
+
+                    <path d="M7 8v7c0 2.2 4 4 9 4s9-1.8 9-4V8"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                    <path d="M7 15v7c0 2.2 4 4 9 4s9-1.8 9-4v-7"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                </svg>
+
+            </div>
+
+            <div class="benefit-text">
+
+                <span class="benefit-title">
+                    Lower bills
+                </span>
+
+                <span class="benefit-sub">
+                    Cut your electricity costs
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+
+                <svg viewBox="0 0 32 32" fill="none">
+
+                    <path d="M16 3 27 7v8c0 7-4.4 11.5-11 14-6.6-2.5-11-7-11-14V7l11-4Z"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                    <path d="m11 16 3.2 3.2L21 12"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                </svg>
+
+            </div>
+
+            <div class="benefit-text">
+
+                <span class="benefit-title">
+                    Energy independence
+                </span>
+
+                <span class="benefit-sub">
+                    Reliable, anytime, anywhere
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+
+                <svg viewBox="0 0 32 32" fill="none">
+
+                    <circle cx="16" cy="16" r="13"
+                            stroke="currentColor"
+                            stroke-width="2"/>
+
+                    <path d="M3 16h26M16 3c4 4 6 8.3 6 13s-2 9-6 13M16 3c-4 4-6 8.3-6 13s2 9 6 13"
+                          stroke="currentColor"
+                          stroke-width="1.5"/>
+
+                </svg>
+
+            </div>
+
+            <div class="benefit-text">
+
+                <span class="benefit-title">
+                    A greener tomorrow
+                </span>
+
+                <span class="benefit-sub">
+                    Less carbon footprint
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* =========================================================
+   SOLAR 3D STORY  (Three.js r128)
+   One looping camera flythrough, 18 seconds:
+   wide house > sunlight > panels > rays + circuit glow >
+   cable arrows > inverter > AC wave > pull-back + savings HUD
+   No external assets - everything is built in code.
+========================================================= */
+(function(){
+
+    var hero = document.querySelector('#solarshop-hero');
+    if(!hero) return;
+
+    var bg      = hero.querySelector('.hero-background');
+    var stageEl = hero.querySelector('.solar-stage');
+    if(!bg || typeof THREE === 'undefined') return;          /* fallback = hero-bg image */
+
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var canvas = document.createElement('canvas');
+    canvas.className = 'solar3d';
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Animated illustration: sunlight reaches rooftop solar panels, powers the home and lowers the electricity bill');
+    bg.insertBefore(canvas, bg.firstChild);
+
+    var renderer;
+    try{
+        renderer = new THREE.WebGLRenderer({ canvas:canvas, antialias:true, alpha:true, powerPreference:'high-performance' });
+    }catch(err){ canvas.parentNode.removeChild(canvas); return; }
+
+    renderer.setClearColor(0x000000, 0);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    /* ---------- helpers ---------- */
+    var clamp = function(x,a,b){ return Math.min(b, Math.max(a, x)); };
+    var sstep = function(x){ x = clamp(x,0,1); return x*x*(3-2*x); };
+    var ramp  = function(t,a,b){ return sstep((t-a)/(b-a)); };
+    var lerp  = function(a,b,k){ return a + (b-a)*k; };
+
+    function rng(seed){
+        return function(){
+            seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+            var t = Math.imul(seed ^ seed>>>15, 1 | seed);
+            t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t;
+            return ((t ^ t>>>14) >>> 0) / 4294967296;
+        };
+    }
+
+    var MAXANISO = renderer.capabilities.getMaxAnisotropy();
+    function canvasTex(w,h,draw,repeat){
+        var c = document.createElement('canvas'); c.width = w; c.height = h;
+        draw(c.getContext('2d'), w, h);
+        var t = new THREE.CanvasTexture(c);
+        t.anisotropy = Math.min(8, MAXANISO);
+        if(repeat){ t.wrapS = t.wrapT = THREE.RepeatWrapping; }
+        return t;
+    }
+    function radialTex(stops, size){
+        return canvasTex(size||128, size||128, function(g,w,h){
+            var r = g.createRadialGradient(w/2,h/2,0,w/2,h/2,w/2);
+            stops.forEach(function(s){ r.addColorStop(s[0], s[1]); });
+            g.fillStyle = r; g.fillRect(0,0,w,h);
+        });
+    }
+
+    var scene  = new THREE.Scene();
+    scene.fog  = new THREE.Fog(0xd3e9f7, 55, 150);
+    var camera = new THREE.PerspectiveCamera(36, 2, 0.1, 700);
+
+    /* ---------- constants (house) ---------- */
+    var W = 12, D = 8, WH = 4, RH = 2.6;                     /* width, depth, wall height, roof rise */
+    var A  = Math.atan2(RH, D/2);                            /* roof pitch */
+    var SA = Math.sin(A), CA = Math.cos(A);
+    var SLOPE = Math.hypot(D/2, RH);                         /* slope length ridge > eave */
+    function roofPt(x, s, lift){                             /* s = distance down the front slope */
+        return new THREE.Vector3(x, WH + RH - s*SA + lift*CA, s*CA + lift*SA);
+    }
+
+    var SUN_POS = new THREE.Vector3(-9.5, 13.2, -4.5);          /* visible sun + rays start */
+
+    /* =========================================================
+       SKY, CLOUDS, GROUND
+    ========================================================= */
+    var sky = new THREE.Mesh(
+        new THREE.SphereGeometry(500, 32, 16),
+        new THREE.ShaderMaterial({
+            side:THREE.BackSide, depthWrite:false, fog:false,
+            vertexShader:'varying vec3 vP; void main(){ vP=normalize(position); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+            fragmentShader:'varying vec3 vP; void main(){ float h=clamp(vP.y,-.1,1.);'+
+                'vec3 hor=vec3(.83,.91,.97); vec3 mid=vec3(.56,.77,.95); vec3 top=vec3(.27,.55,.9);'+
+                'vec3 c=mix(hor,mid,smoothstep(0.,.28,h)); c=mix(c,top,smoothstep(.22,.95,h));'+
+                'gl_FragColor=vec4(c,1.); }'
+        })
+    );
+    sky.renderOrder = -10;
+    scene.add(sky);
+
+    var cloudTex = canvasTex(256,128,function(g,w,h){
+        var r = rng(7);
+        for(var i=0;i<16;i++){
+            var x = 50 + r()*156, y = 50 + r()*30, rad = 22 + r()*26;
+            var gr = g.createRadialGradient(x,y,0,x,y,rad);
+            gr.addColorStop(0,'rgba(255,255,255,.9)'); gr.addColorStop(1,'rgba(255,255,255,0)');
+            g.fillStyle = gr; g.fillRect(0,0,w,h);
+        }
+    });
+    var clouds = [];
+    for(var ci=0; ci<8; ci++){
+        var cm = new THREE.Sprite(new THREE.SpriteMaterial({ map:cloudTex, transparent:true, opacity:.75, depthWrite:false, fog:false }));
+        cm.position.set(-120 + ci*34, 38 + (ci%3)*9, -110 - (ci%2)*30);
+        cm.scale.set(64, 28, 1);
+        scene.add(cm); clouds.push(cm);
+    }
+
+    var grassTex = canvasTex(512,512,function(g,w,h){
+        g.fillStyle = '#5eac3b'; g.fillRect(0,0,w,h);
+        var r = rng(3);
+        for(var i=0;i<900;i++){
+            var x = r()*w, y = r()*h, s = 6 + r()*26;
+            g.fillStyle = r()>.5 ? 'rgba(112,196,62,.16)' : 'rgba(40,118,40,.14)';
+            g.beginPath(); g.arc(x,y,s,0,6.283); g.fill();
+        }
+        for(var j=0;j<3000;j++){
+            g.fillStyle = r()>.5 ? 'rgba(150,222,86,.35)' : 'rgba(30,96,30,.3)';
+            g.fillRect(r()*w, r()*h, 1.5, 3);
+        }
+    }, true);
+    grassTex.repeat.set(26,26);
+    var ground = new THREE.Mesh(new THREE.CircleGeometry(170,72),
+        new THREE.MeshLambertMaterial({ map:grassTex, color:0xffffff }));
+    ground.rotation.x = -Math.PI/2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    /* ---------- lights ---------- */
+    scene.add(new THREE.HemisphereLight(0xdcecff, 0x86b25e, .9));
+    var keyL = new THREE.DirectionalLight(0xfff0d2, 1.25);
+    keyL.position.set(-12, 19, 17);
+    keyL.castShadow = true;
+    var smap = (window.innerWidth < 851) ? 1024 : 2048;
+    keyL.shadow.mapSize.set(smap, smap);
+    keyL.shadow.camera.left = -22; keyL.shadow.camera.right = 22;
+    keyL.shadow.camera.top = 22;   keyL.shadow.camera.bottom = -22;
+    keyL.shadow.camera.near = 5;   keyL.shadow.camera.far = 90;
+    keyL.shadow.bias = -0.0006;
+    scene.add(keyL);
+    var fillL = new THREE.DirectionalLight(0xbcd8ff, .35);
+    fillL.position.set(18, 8, 12);
+    scene.add(fillL);
+
+    /* =========================================================
+       HOUSE
+    ========================================================= */
+    var house = new THREE.Group();
+    scene.add(house);
+
+    var wallMat  = new THREE.MeshStandardMaterial({ color:0xf4f2ed, roughness:.92, metalness:0 });
+    var darkMat  = new THREE.MeshStandardMaterial({ color:0x2a2d33, roughness:.7,  metalness:.2 });
+    var roofMat  = new THREE.MeshStandardMaterial({ color:0x2d3138, roughness:.8,  metalness:.15 });
+
+    function addBox(w,h,d,mat,x,y,z,cast,parent){
+        var m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), mat);
+        m.position.set(x,y,z);
+        m.castShadow = cast !== false; m.receiveShadow = true;
+        (parent || house).add(m);
+        return m;
+    }
+
+    /* main body (gable profile, extruded along x) */
+    var prof = new THREE.Shape();
+    prof.moveTo(-D/2,0); prof.lineTo(D/2,0); prof.lineTo(D/2,WH); prof.lineTo(0,WH+RH); prof.lineTo(-D/2,WH); prof.closePath();
+    var bodyG = new THREE.ExtrudeGeometry(prof, { depth:W, bevelEnabled:false });
+    bodyG.rotateY(Math.PI/2); bodyG.translate(-W/2, 0, 0);
+    var body = new THREE.Mesh(bodyG, wallMat);
+    body.castShadow = true; body.receiveShadow = true;
+    house.add(body);
+
+    /* garage wing */
+    addBox(4.2, 3.0, 4.2, wallMat, -8.1, 1.5, 2.1);
+    addBox(4.7, .22, 4.7, darkMat, -8.1, 3.1, 2.15);
+    var gTex = canvasTex(128,128,function(g,w,h){
+        g.fillStyle = '#d9dcdf'; g.fillRect(0,0,w,h);
+        g.strokeStyle = 'rgba(90,96,104,.55)'; g.lineWidth = 2;
+        for(var i=1;i<6;i++){ g.beginPath(); g.moveTo(0,i*h/6); g.lineTo(w,i*h/6); g.stroke(); }
+    });
+    addBox(3.3, 2.3, .08, new THREE.MeshStandardMaterial({ map:gTex, roughness:.6 }), -8.1, 1.2, 4.24, false);
+
+    /* wood cladding + window + door */
+    var woodTex = canvasTex(256,256,function(g,w,h){
+        g.fillStyle = '#b4825a'; g.fillRect(0,0,w,h);
+        var r = rng(11);
+        for(var i=0;i<16;i++){
+            g.fillStyle = 'rgba(' + (r()>.5 ? '255,220,170' : '70,40,20') + ',' + (.08 + r()*.1) + ')';
+            g.fillRect(i*16, 0, 14, h);
+            g.fillStyle = 'rgba(40,22,10,.35)'; g.fillRect(i*16+14, 0, 2, h);
+        }
+    });
+    addBox(5.2, 4.0, .1, new THREE.MeshStandardMaterial({ map:woodTex, roughness:.85 }), -3.4, 2.0, 4.04, false);
+
+    var winMat = new THREE.MeshStandardMaterial({
+        color:0x9ec6dd, roughness:.08, metalness:.55,
+        emissive:0xffc680, emissiveIntensity:0
+    });
+    addBox(3.6, 2.9, .16, darkMat, -3.4, 1.95, 4.06, false);
+    addBox(3.4, 2.7, .12, winMat,  -3.4, 1.95, 4.1,  false);
+    addBox(.07, 2.7, .14, darkMat, -3.4, 1.95, 4.14, false);
+    addBox(.07, 2.7, .14, darkMat, -4.25, 1.95, 4.14, false);
+    addBox(.07, 2.7, .14, darkMat, -2.55, 1.95, 4.14, false);
+    addBox(1.2, 2.55, .12, new THREE.MeshStandardMaterial({ color:0x3a3c40, roughness:.5 }), -0.35, 1.28, 4.07, false);
+    addBox(.1, .9, .06, new THREE.MeshStandardMaterial({ color:0xd0d3d8, metalness:.8, roughness:.3 }), .12, 1.2, 4.16, false);
+    var upWin = addBox(2.4, 1.2, .1, winMat, -3.4, 5.0, 3.0, false);     /* small upper window (gable side kept simple) */
+    upWin.visible = false;
+
+    /* patio, driveway, bushes */
+    addBox(9, .14, 2.2, new THREE.MeshStandardMaterial({ color:0xd9d7d1, roughness:.95 }), -1.5, .07, 5.1, false);
+    addBox(3.8, .06, 20,  new THREE.MeshStandardMaterial({ color:0xcfcdc8, roughness:.95 }), -8.1, .03, 14, false);
+    var bushMat = new THREE.MeshLambertMaterial({ color:0x2f7d3a });
+    [[-5.7,.5,4.9,.55],[-1.5,.45,4.95,.5],[7.0,.45,4.4,.55],[-10.9,.5,4.6,.6]].forEach(function(b){
+        var m = new THREE.Mesh(new THREE.IcosahedronGeometry(b[3],1), bushMat);
+        m.position.set(b[0],b[1],b[2]); m.scale.y = .85; m.castShadow = true; house.add(m);
+    });
+
+    /* roof slabs (front + back) */
+    var slabL = SLOPE + .45 + .2;
+    function roofSlab(sign){
+        var m = new THREE.Mesh(new THREE.BoxGeometry(W+1.2, .22, slabL), roofMat);
+        var sc = slabL/2 - .2;
+        var dir = new THREE.Vector3(0, -SA, sign*CA);
+        var nrm = new THREE.Vector3(0,  CA, sign*SA);
+        m.position.set(0, WH+RH, 0).add(dir.multiplyScalar(sc)).add(nrm.multiplyScalar(.11));
+        m.rotation.x = sign*A;
+        m.castShadow = true; m.receiveShadow = true;
+        house.add(m);
+    }
+    roofSlab(1); roofSlab(-1);
+    addBox(W+1.2, .2, .5, darkMat, 0, WH+RH+.2, 0);
+
+    /* chimney */
+    var chP = roofPt(-5.3, 1.3, 0);
+    addBox(.9, 1.9, .9, wallMat, chP.x, chP.y + .7, chP.z);
+    addBox(1.1, .14, 1.1, darkMat, chP.x, chP.y + 1.69, chP.z);
+
+    /* =========================================================
+       SOLAR PANELS
+    ========================================================= */
+    var COLS = 6, ROWS = 3, PW = 1.6, PH = 1.0, GAP = .05;
+    var ARR_W = COLS*(PW+GAP) - GAP, ARR_H = ROWS*(PH+GAP) - GAP;
+    var ARR_X = 1.35, ARR_S = 2.55;
+
+    var cellTex = canvasTex(384,240,function(g,w,h){
+        var gr = g.createLinearGradient(0,0,w,h);
+        gr.addColorStop(0,'#14357a'); gr.addColorStop(1,'#0b2459');
+        g.fillStyle = gr; g.fillRect(0,0,w,h);
+        var cx = 6, cy = 10, cw = w/cx, ch = h/cy, r = rng(5);
+        for(var i=0;i<cx;i++) for(var j=0;j<cy;j++){
+            var k = r();
+            g.fillStyle = 'rgb(' + Math.round(18+k*14) + ',' + Math.round(62+k*28) + ',' + Math.round(140+k*34) + ')';
+            g.fillRect(i*cw+2.5, j*ch+2.5, cw-5, ch-5);
+            g.strokeStyle = 'rgba(190,215,255,.32)'; g.lineWidth = 1;
+            g.beginPath(); g.moveTo(i*cw+cw*.33, j*ch+2.5); g.lineTo(i*cw+cw*.33, j*ch+ch-2.5);
+            g.moveTo(i*cw+cw*.66, j*ch+2.5); g.lineTo(i*cw+cw*.66, j*ch+ch-2.5); g.stroke();
+        }
+        g.strokeStyle = 'rgba(230,240,255,.55)'; g.lineWidth = 2;
+        for(var a=0;a<=cx;a++){ g.beginPath(); g.moveTo(a*cw,0); g.lineTo(a*cw,h); g.stroke(); }
+        for(var b=0;b<=cy;b++){ g.beginPath(); g.moveTo(0,b*ch); g.lineTo(w,b*ch); g.stroke(); }
+    });
+    var glassMat = new THREE.MeshStandardMaterial({
+        map:cellTex, roughness:.28, metalness:.35, emissive:0x0b2f7a, emissiveIntensity:.55
+    });
+    var frameMat = new THREE.MeshStandardMaterial({ color:0xdfe3e8, roughness:.4, metalness:.7 });
+
+    var arr = new THREE.Group();
+    arr.position.copy(roofPt(ARR_X, ARR_S, .25));
+    arr.rotation.x = A;
+    house.add(arr);
+
+    var panelGlass = new THREE.PlaneGeometry(PW-.1, PH-.1);
+    panelGlass.rotateX(-Math.PI/2);
+    for(var pr=0; pr<ROWS; pr++){
+        for(var pc=0; pc<COLS; pc++){
+            var px = (pc - (COLS-1)/2) * (PW+GAP);
+            var pz = (pr - (ROWS-1)/2) * (PH+GAP);
+            var fr = new THREE.Mesh(new THREE.BoxGeometry(PW, .05, PH), frameMat);
+            fr.position.set(px, 0, pz); fr.castShadow = true; fr.receiveShadow = true;
+            arr.add(fr);
+            var gl = new THREE.Mesh(panelGlass, glassMat);
+            gl.position.set(px, .0265, pz); gl.receiveShadow = true;
+            arr.add(gl);
+        }
+    }
+    /* mounting rails (little shadow under panels) */
+    addBox(ARR_W, .05, .08, darkMat, 0, -.05, -ARR_H/2+.2, false, arr);
+    addBox(ARR_W, .05, .08, darkMat, 0, -.05,  ARR_H/2-.2, false, arr);
+
+    /* circuit glow overlay */
+    var circuitTex = canvasTex(1024, 330, function(g,w,h){
+        var r = rng(21);
+        g.lineCap = 'round'; g.lineJoin = 'round';
+        for(var i=0;i<46;i++){
+            var x = r()*w, y = r()*h;
+            g.beginPath(); g.moveTo(x,y);
+            var n = 2 + Math.floor(r()*4);
+            for(var k=0;k<n;k++){
+                if(r()>.5) x += (r()-.5)*220; else y += (r()-.5)*110;
+                g.lineTo(x,y);
+            }
+            g.strokeStyle = 'rgba(255,255,255,' + (.55 + r()*.45) + ')';
+            g.lineWidth = 2 + r()*2.5;
+            g.stroke();
+            g.fillStyle = '#fff';
+            g.beginPath(); g.arc(x,y,4+r()*3,0,6.283); g.fill();
+        }
+        g.strokeStyle = 'rgba(255,255,255,.85)'; g.lineWidth = 3;
+        for(var c=1;c<COLS;c++){ g.beginPath(); g.moveTo(c*w/COLS,0); g.lineTo(c*w/COLS,h); g.stroke(); }
+        for(var q=1;q<ROWS;q++){ g.beginPath(); g.moveTo(0,q*h/ROWS); g.lineTo(w,q*h/ROWS); g.stroke(); }
+    });
+    var circuitMat = new THREE.ShaderMaterial({
+        transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+        uniforms:{ tL:{value:circuitTex}, uT:{value:0}, uA:{value:0} },
+        vertexShader:'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+        fragmentShader:'uniform sampler2D tL; uniform float uT,uA; varying vec2 vUv;'+
+            'void main(){ float l=texture2D(tL,vUv).a; if(l<.001) l=texture2D(tL,vUv).r;'+
+            'float sw=.5+.5*sin(uT*2.4+vUv.x*10.+vUv.y*6.);'+
+            'vec3 col=mix(vec3(.05,.85,1.),vec3(.45,1.,.85),sw);'+
+            'float a=(l*(.5+.9*sw)+.16*(.4+.6*sw))*uA;'+
+            'gl_FragColor=vec4(col*a, a); }'
+    });
+    var circuit = new THREE.Mesh(new THREE.PlaneGeometry(ARR_W, ARR_H), circuitMat);
+    circuit.rotation.x = -Math.PI/2;
+    circuit.position.y = .05;
+    arr.add(circuit);
+
+    /* =========================================================
+       TREES
+    ========================================================= */
+    var trunkMat = new THREE.MeshLambertMaterial({ color:0x7a5a3e });
+    var leafMats = [0xf7f8fa, 0xeef1f5, 0xfbf7f2].map(function(c){ return new THREE.MeshLambertMaterial({ color:c }); });
+    var treeR = rng(42), trees = [];
+    function tree(x,z,s){
+        var g = new THREE.Group();
+        var tr = new THREE.Mesh(new THREE.CylinderGeometry(.13*s,.2*s,1.9*s,6), trunkMat);
+        tr.position.y = .95*s; tr.castShadow = true; g.add(tr);
+        for(var i=0;i<5;i++){
+            var r = (1.0 + treeR()*.7)*s;
+            var m = new THREE.Mesh(new THREE.IcosahedronGeometry(r,2), leafMats[i%3]);
+            m.position.set((treeR()-.5)*1.7*s, 2.3*s + treeR()*1.5*s, (treeR()-.5)*1.7*s);
+            m.castShadow = true; g.add(m);
+        }
+        g.position.set(x,0,z);
+        g.userData.ph = x*.37 + z*.21;
+        trees.push(g);
+        scene.add(g);
+    }
+    [[-22,-6,1.3],[-17,-10,1.5],[-13,-14,1.3],[-6,-13,1.4],[2,-14,1.6],[9,-12,1.3],[15,-9,1.5],[21,-5,1.3],[24,2,1.4],
+     [-19,3,1.2],[-15,9,1.1],[-21,12,1.3],[17,0,1.2],[13,-3,1.0],[-26,-1,1.5],[28,-10,1.6],[-9,-20,1.7],[7,-22,1.8],
+     [-30,8,1.4],[20,8,1.2]].forEach(function(t){ tree(t[0],t[1],t[2]); });
+
+    /* =========================================================
+       SUN + RAYS
+    ========================================================= */
+    var sunGlowTex = radialTex([[0,'rgba(255,248,200,1)'],[.18,'rgba(255,226,110,.85)'],[.5,'rgba(255,200,60,.25)'],[1,'rgba(255,190,40,0)']], 256);
+    var sunStarTex = canvasTex(256,256,function(g,w,h){
+        g.translate(w/2,h/2);
+        for(var i=0;i<14;i++){
+            g.save(); g.rotate(i*Math.PI/7);
+            var gr = g.createLinearGradient(0,0,0,-w/2);
+            gr.addColorStop(0,'rgba(255,236,140,.95)'); gr.addColorStop(1,'rgba(255,220,80,0)');
+            g.fillStyle = gr;
+            g.beginPath(); g.moveTo(-3,-18); g.lineTo(0,-w/2+4); g.lineTo(3,-18); g.closePath(); g.fill();
+            g.restore();
+        }
+    });
+    function sprite(tex,size,op){
+        var s = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, opacity:op||1, depthWrite:false, fog:false, blending:THREE.AdditiveBlending }));
+        s.scale.set(size,size,1); return s;
+    }
+    var sunGroup = new THREE.Group();
+    sunGroup.position.copy(SUN_POS);
+    var sunGlow = sprite(sunGlowTex, 8.5, .9), sunStar = sprite(sunStarTex, 7.5, .85), sunCore = sprite(sunGlowTex, 2.3, 1);
+    sunGroup.add(sunGlow); sunGroup.add(sunStar); sunGroup.add(sunCore);
+    scene.add(sunGroup);
+
+    var rayVS = 'varying vec2 vUv; varying vec3 vN; varying vec3 vV;'+
+        'void main(){ vUv=uv; vec4 mv=modelViewMatrix*vec4(position,1.); vN=normalize(normalMatrix*normal); vV=normalize(-mv.xyz);'+
+        'gl_Position=projectionMatrix*mv; }';
+    var rayFS = 'uniform float uI,uT,uPh,uDraw,uAlpha; uniform vec3 uCol; varying vec2 vUv; varying vec3 vN; varying vec3 vV;'+
+        'void main(){ float s=vUv.y; float rim=pow(abs(dot(normalize(vN),normalize(vV))),1.6);'+
+        'float pulse=.62+.38*sin(s*34.-uT*7.+uPh);'+
+        'float head=1.-smoothstep(uDraw-.06,uDraw,s);'+
+        'float edge=smoothstep(0.,.1,s);'+
+        'float a=uI*uAlpha*rim*pulse*head*edge;'+
+        'gl_FragColor=vec4(uCol,a); }';
+    var rays = [], flares = [], rayEnds = [];
+    var flareTex = radialTex([[0,'rgba(255,255,235,1)'],[.25,'rgba(255,236,120,.8)'],[1,'rgba(255,210,60,0)']], 128);
+    var UP = new THREE.Vector3(0,1,0);
+    arr.updateMatrixWorld(true);
+    [[-3.6,-.9,0],[-2.2,.5,1.3],[-.6,-.6,2.6],[1.1,.7,3.9],[2.7,-.3,5.2],[4.0,.9,6.5]].forEach(function(rp,i){
+        var tgt = arr.localToWorld(new THREE.Vector3(rp[0]*.95, .04, rp[1]));
+        var from = SUN_POS.clone().add(new THREE.Vector3(i*.35-1.0, -i*.12, i*.2-.4));
+        var dir = tgt.clone().sub(from), len = dir.length(); dir.normalize();
+        function beam(radius, alpha, col){
+            var mat = new THREE.ShaderMaterial({
+                transparent:true, depthWrite:false, side:THREE.DoubleSide,
+                uniforms:{ uI:{value:0}, uT:{value:0}, uPh:{value:rp[2]}, uDraw:{value:0}, uAlpha:{value:alpha}, uCol:{value:new THREE.Color(col)} },
+                vertexShader:rayVS, fragmentShader:rayFS
+            });
+            var m = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, len, 10, 1, true), mat);
+            m.position.copy(from).addScaledVector(dir, len/2);
+            m.quaternion.setFromUnitVectors(UP, dir);
+            m.frustumCulled = false;
+            scene.add(m);
+            return mat;
+        }
+        rayEnds.push({ a:from.clone(), b:tgt.clone() });
+        rays.push({ core:beam(.055,1.0,0xfff4c0), mid:beam(.13,.55,0xffd84a), glow:beam(.42,.16,0xffcc33) });
+        var fl = sprite(flareTex, 2.6, 0);
+        fl.position.copy(tgt).add(new THREE.Vector3(0,.12,0));
+        scene.add(fl); flares.push(fl);
+    });
+
+    /* sunlight particle stream: sun > panels */
+    var NP = 200, pPos = new Float32Array(NP*3), pSeed = [];
+    for(var pi=0; pi<NP; pi++) pSeed.push({ r:pi % rayEnds.length, o:Math.random(), s:.28 + Math.random()*.42,
+        j:[(Math.random()-.5)*.7, (Math.random()-.5)*.7, (Math.random()-.5)*.7] });
+    var pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    var pMat = new THREE.PointsMaterial({ map:flareTex, size:.5, color:0xfff2a0, transparent:true, opacity:0,
+        depthWrite:false, blending:THREE.AdditiveBlending, sizeAttenuation:true });
+    var pts = new THREE.Points(pGeo, pMat); pts.frustumCulled = false; scene.add(pts);
+
+    /* =========================================================
+       CABLE + ENERGY ARROWS
+    ========================================================= */
+    function roundedPath(pts, r){
+        var path = new THREE.CurvePath();
+        var prev = pts[0].clone();
+        for(var i=1;i<pts.length-1;i++){
+            var p = pts[i], a = pts[i-1], b = pts[i+1];
+            var rr = Math.min(r, p.distanceTo(a)/2, p.distanceTo(b)/2);
+            var en = p.clone().add(a.clone().sub(p).normalize().multiplyScalar(rr));
+            var ex = p.clone().add(b.clone().sub(p).normalize().multiplyScalar(rr));
+            if(prev.distanceTo(en) > 1e-4) path.add(new THREE.LineCurve3(prev, en));
+            path.add(new THREE.QuadraticBezierCurve3(en, p.clone(), ex));
+            prev = ex;
+        }
+        path.add(new THREE.LineCurve3(prev, pts[pts.length-1].clone()));
+        return path;
+    }
+    var P = [
+        roofPt(4.4, 3.2, .3),
+        roofPt(6.0, 3.9, .3),
+        roofPt(6.1, 5.05, .3),
+        new THREE.Vector3(6.05, 3.62, 4.36),
+        new THREE.Vector3(5.55, 3.3, 4.16),
+        new THREE.Vector3(5.5, 1.0, 4.16),
+        new THREE.Vector3(3.2, .86, 4.16),
+        new THREE.Vector3(3.2, 1.5, 4.16)
+    ];
+    var cablePath = roundedPath(P, .32);
+
+    var cableTube = new THREE.Mesh(new THREE.TubeGeometry(cablePath, 260, .05, 8, false),
+        new THREE.MeshStandardMaterial({ color:0x1e2125, roughness:.5, metalness:.3 }));
+    cableTube.castShadow = true;
+    scene.add(cableTube);
+
+    var flowFS = 'uniform float uProg,uT,uAlpha; uniform vec3 uA,uB; varying vec2 vUv;'+
+        'void main(){ float u=vUv.x; if(u>uProg) discard;'+
+        'float pl=.55+.45*sin(u*70.-uT*6.);'+
+        'vec3 c=mix(uA,uB,smoothstep(0.,1.,u));'+
+        'gl_FragColor=vec4(c*(.75+.25*pl), uAlpha*(.7+.3*pl)); }';
+    function flowTube(rad, alpha){
+        return new THREE.Mesh(new THREE.TubeGeometry(cablePath, 260, rad, 10, false),
+            new THREE.ShaderMaterial({
+                transparent:true, depthWrite:false,
+                uniforms:{ uProg:{value:0}, uT:{value:0}, uAlpha:{value:alpha}, uA:{value:new THREE.Color(0x19e07a)}, uB:{value:new THREE.Color(0x00d9f2)} },
+                vertexShader:'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+                fragmentShader:flowFS
+            }));
+    }
+    var flowCore = flowTube(.06, .95), flowHalo = flowTube(.12, .18);
+    scene.add(flowHalo); scene.add(flowCore);
+
+    var arrowMat = new THREE.MeshBasicMaterial({ color:0xeafff6, transparent:true, opacity:1, toneMapped:false });
+    var arrowGeo = new THREE.ConeGeometry(.21, .58, 4);
+    var arrows = [];
+    for(var ai=0; ai<16; ai++){
+        var am = new THREE.Mesh(arrowGeo, arrowMat);
+        am.visible = false; scene.add(am); arrows.push(am);
+    }
+
+    /* =========================================================
+       INVERTER
+    ========================================================= */
+    var invCanvas = document.createElement('canvas'); invCanvas.width = 360; invCanvas.height = 520;
+    var invCtx = invCanvas.getContext('2d');
+    var invTex = new THREE.CanvasTexture(invCanvas); invTex.anisotropy = Math.min(8, MAXANISO);
+    var invLast = -1;
+    function drawInverter(on, kw){
+        var g = invCtx, w = 360, h = 520;
+        var gr = g.createLinearGradient(0,0,w,h);
+        gr.addColorStop(0,'#fbfbfa'); gr.addColorStop(1,'#e3e5e7');
+        g.fillStyle = gr; g.fillRect(0,0,w,h);
+        /* top lcd */
+        g.fillStyle = '#16191d'; rr(g,56,70,248,130,14); g.fill();
+        g.fillStyle = on ? 'rgba(210,235,255,.95)' : 'rgba(120,130,140,.5)';
+        g.font = '600 46px "IBM Plex Mono", monospace'; g.textAlign = 'center';
+        g.fillText(on ? (kw*0.21).toFixed(1) + '  A' : '- - -', w/2, 125);
+        g.font = '500 26px "IBM Plex Mono", monospace';
+        g.fillText(on ? (231 + Math.round(kw)) + '  V' : '', w/2, 172);
+        /* lower display */
+        g.fillStyle = '#101216'; rr(g,40,312,280,120,16); g.fill();
+        g.fillStyle = on ? '#43f0b0' : 'rgba(70,80,90,.6)';
+        g.font = '600 62px "IBM Plex Mono", monospace';
+        g.shadowColor = on ? '#2cf0a8' : 'transparent'; g.shadowBlur = on ? 14 : 0;
+        g.fillText(on ? kw.toFixed(2) : '0.00', 170, 392);
+        g.shadowBlur = 0;
+        g.font = '500 22px "IBM Plex Mono", monospace'; g.fillStyle = on ? '#9fe8ff' : 'rgba(100,110,120,.7)';
+        g.fillText('kW', 292, 420);
+        /* leds */
+        g.fillStyle = on ? '#2cf08a' : '#9aa1a8'; g.beginPath(); g.arc(70,470,8,0,6.283); g.fill();
+        g.fillStyle = on ? '#14d3ee' : '#9aa1a8'; g.beginPath(); g.arc(100,470,8,0,6.283); g.fill();
+    }
+    function rr(g,x,y,w,h,r){
+        g.beginPath(); g.moveTo(x+r,y); g.lineTo(x+w-r,y); g.quadraticCurveTo(x+w,y,x+w,y+r); g.lineTo(x+w,y+h-r);
+        g.quadraticCurveTo(x+w,y+h,x+w-r,y+h); g.lineTo(x+r,y+h); g.quadraticCurveTo(x,y+h,x,y+h-r); g.lineTo(x,y+r);
+        g.quadraticCurveTo(x,y,x+r,y); g.closePath();
+    }
+    drawInverter(false, 0); invTex.needsUpdate = true;
+
+    var inv = new THREE.Group();
+    inv.position.set(3.2, 2.2, 4.0);
+    house.add(inv);
+    addBox(1.0, 1.45, .2, new THREE.MeshStandardMaterial({ color:0xf0f1f2, roughness:.4 }), 0, 0, .1, true, inv);
+    addBox(.11, 1.45, .24, new THREE.MeshStandardMaterial({ color:0x26292d, roughness:.5 }), .555, 0, .11, true, inv);
+    var invFace = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 1.45), new THREE.MeshBasicMaterial({ map:invTex, toneMapped:false }));
+    invFace.position.set(0, 0, .205);
+    inv.add(invFace);
+    [-.28,0,.28].forEach(function(px){
+        var pm = new THREE.Mesh(new THREE.CylinderGeometry(.065,.065,.2,10), new THREE.MeshStandardMaterial({ color:0x1d1f23, roughness:.6 }));
+        pm.position.set(px, -.8, .1); inv.add(pm);
+    });
+
+    /* =========================================================
+       AC WAVE (shader ribbon on the wall)
+    ========================================================= */
+    var waveMat = new THREE.ShaderMaterial({
+        transparent:true, depthWrite:false, side:THREE.DoubleSide,
+        uniforms:{ uT:{value:0}, uReveal:{value:0}, uA:{value:0} },
+        vertexShader:'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+        fragmentShader:'uniform float uT,uReveal,uA; varying vec2 vUv;'+
+            'void main(){ float x=vUv.x; float y=(vUv.y-.5)*2.;'+
+            'float rev=smoothstep(1.-uReveal-.06,1.-uReveal+.02,x);'+
+            'float env=smoothstep(.97,.82,x)*smoothstep(0.,.14,x);'+
+            'float core=0.,glow=0.;'+
+            'for(int k=0;k<3;k++){ float fk=float(k);'+
+            ' float w=sin(x*20.-uT*3.2+fk*1.25)*(.62-fk*.15)*env;'+
+            ' float d=abs(y-w); core+=exp(-d*d*1100.)*(1.-fk*.22); glow+=exp(-d*d*70.)*(.5-fk*.1); }'+
+            'vec3 col=mix(vec3(.0,.82,.93),vec3(.1,.95,.62),x);'+
+            'float a=clamp(core*.95+glow*.42,0.,1.)*rev*uA;'+
+            'gl_FragColor=vec4(col,a); }'
+    });
+    var wave = new THREE.Mesh(new THREE.PlaneGeometry(7.0, 1.9), waveMat);
+    wave.position.set(-.35, 2.0, 4.24);
+    scene.add(wave);
+
+    /* =========================================================
+       SAVINGS HUD (floating glass panel)
+    ========================================================= */
+    var hudC = document.createElement('canvas'); hudC.width = 768; hudC.height = 384;
+    var hudG = hudC.getContext('2d');
+    var hudTex = new THREE.CanvasTexture(hudC); hudTex.anisotropy = 4;
+    function drawHUD(p, t){
+        var g = hudG, w = 768, h = 384;
+        g.clearRect(0,0,w,h);
+        g.fillStyle = 'rgba(244,252,255,.72)'; rr(g,6,6,w-12,h-12,34); g.fill();
+        g.strokeStyle = 'rgba(0,214,240,.9)'; g.lineWidth = 3; rr(g,6,6,w-12,h-12,34); g.stroke();
+        /* ring gauges */
+        [[110,110,.92,'#19e07a'],[110,262,.78,'#00d9f2']].forEach(function(r){
+            g.lineWidth = 11; g.strokeStyle = 'rgba(16,60,90,.18)';
+            g.beginPath(); g.arc(r[0],r[1],44,0,6.283); g.stroke();
+            g.strokeStyle = r[3]; g.lineCap = 'round'; g.shadowColor = r[3]; g.shadowBlur = 14;
+            g.beginPath(); g.arc(r[0],r[1],44,-Math.PI/2,-Math.PI/2 + 6.283*r[2]*p); g.stroke();
+            g.shadowBlur = 0;
+            g.fillStyle = '#0d3a5c'; g.font = '700 26px Manrope, Arial, sans-serif'; g.textAlign = 'center';
+            g.fillText(Math.round(r[2]*100*p) + '%', r[0], r[1]+9);
+        });
+        /* bars */
+        var bars = [.28,.4,.34,.55,.5,.72,.88];
+        for(var i=0;i<bars.length;i++){
+            var bh = bars[i]*190*clamp(p*1.4 - i*.08, 0, 1);
+            var bx = 220 + i*46, by = 320;
+            var gr = g.createLinearGradient(0,by-bh,0,by);
+            gr.addColorStop(0,'#19e07a'); gr.addColorStop(1,'#00bfe0');
+            g.fillStyle = gr; g.shadowColor = '#19e07a'; g.shadowBlur = 10;
+            rr(g,bx,by-bh,30,Math.max(bh,1),6); g.fill(); g.shadowBlur = 0;
+        }
+        g.strokeStyle = 'rgba(16,60,90,.28)'; g.lineWidth = 2;
+        g.beginPath(); g.moveTo(206,324); g.lineTo(552,324); g.stroke();
+        /* dollar */
+        var pulse = 1 + .04*Math.sin(t*3);
+        g.save(); g.translate(655,170); g.scale(pulse,pulse);
+        g.shadowColor = '#19e07a'; g.shadowBlur = 26;
+        g.fillStyle = '#17d86f'; g.font = '800 150px Archivo, Arial, sans-serif'; g.textAlign = 'center';
+        g.fillText('$', 0, 52);
+        g.restore();
+        g.shadowBlur = 0;
+        g.fillStyle = '#0d3a5c'; g.font = '800 24px Manrope, Arial, sans-serif'; g.textAlign = 'center';
+        g.fillText('SAVINGS', 655, 300);
+        g.font = '600 22px "IBM Plex Mono", monospace'; g.fillStyle = '#087f61';
+        g.fillText('-' + Math.round(62*p) + '% bill', 655, 336);
+    }
+    var hud = new THREE.Mesh(new THREE.PlaneGeometry(6.0, 3.0),
+        new THREE.MeshBasicMaterial({ map:hudTex, transparent:true, depthWrite:false, side:THREE.DoubleSide, toneMapped:false, opacity:0 }));
+    hud.position.set(-.2, 3.1, 6.2);
+    hud.rotation.y = .42;
+    hud.visible = false;
+    scene.add(hud);
+
+    /* =========================================================
+       TIMELINE  (seconds)
+    ========================================================= */
+    var T = 18;
+    var STEPS = [0, 3.4, 6.4, 9.4, 12.4];                    /* caption switch times */
+    var KF = [
+        [0.0,  [14.5, 6.0, 22.5], [1.0, 5.6, 0.2], 39],
+        [3.2,  [12.0, 5.2, 17.5], [1.0, 5.0, 0.8], 38],
+        [4.6,  [10.5, 4.4, 12.8], [0.6, 5.1, 2.2], 40],
+        [6.6,  [4.6,  3.4, 12.0], [1.4, 5.2, 2.2], 40],
+        [8.2,  [11.0, 4.6, 11.5], [5.3, 3.1, 4.1], 38],
+        [9.8,  [7.0,  2.8,  9.8], [3.5, 2.2, 4.0], 36],
+        [11.8, [4.2,  2.5, 10.4], [0.4, 2.2, 4.0], 42],
+        [13.2, [10.5, 4.9, 18.5], [1.0, 4.2, 1.0], 39],
+        [16.6, [12.5, 5.6, 20.5], [1.0, 5.1, 0.6], 39],
+        [18.0, [14.5, 6.0, 22.5], [1.0, 5.6, 0.2], 39]
+    ];
+    var camP = new THREE.Vector3(), camT = new THREE.Vector3();
+    var mouse = { x:0, y:0, sx:0, sy:0 };
+
+    function camAt(t){
+        var i = 0;
+        while(i < KF.length-2 && t >= KF[i+1][0]) i++;
+        var a = KF[i], b = KF[i+1];
+        var k = sstep((t - a[0]) / (b[0] - a[0]));
+        camP.set(lerp(a[1][0],b[1][0],k), lerp(a[1][1],b[1][1],k), lerp(a[1][2],b[1][2],k));
+        camT.set(lerp(a[2][0],b[2][0],k), lerp(a[2][1],b[2][1],k), lerp(a[2][2],b[2][2],k));
+        camP.x += Math.sin(t*.55)*.18 + mouse.sx*.5;
+        camP.y += Math.sin(t*.8)*.07  - mouse.sy*.25;
+        camP.z += Math.cos(t*.45)*.14;
+        camera.position.copy(camP);
+        camera.lookAt(camT);
+        return lerp(a[3], b[3], k);
+    }
+
+    /* captions */
+    var cards = hero.querySelectorAll('.story-cards .process-card');
+    var dots  = hero.querySelectorAll('.story-dots .sd');
+    var curStep = -1;
+    function setStep(i){
+        if(i === curStep) return;
+        curStep = i;
+        for(var c=0;c<cards.length;c++) cards[c].classList.toggle('is-on', c === i);
+        for(var d=0;d<dots.length;d++){
+            dots[d].classList.toggle('is-on', d === i);
+            dots[d].classList.toggle('is-done', d < i);
+        }
+    }
+
+    var paused = false, pauseAt = 0;
+    var pauseBtn = hero.querySelector('.story-pause');
+    for(var di=0; di<dots.length; di++){
+        (function(idx){
+            dots[idx].addEventListener('click', function(){
+                var now = performance.now();
+                t0 = now - STEPS[idx]*1000 - 60;
+                if(paused) pauseAt = now;
+                if(reduce) hero.__solar.seek(STEPS[idx] + .5);
+            });
+        })(di);
+    }
+    if(pauseBtn) pauseBtn.addEventListener('click', function(){
+        var now = performance.now();
+        if(!paused){ paused = true; pauseAt = now; }
+        else{ paused = false; t0 += now - pauseAt; }
+        pauseBtn.classList.toggle('is-paused', paused);
+        pauseBtn.setAttribute('aria-label', paused ? 'Play animation' : 'Pause animation');
+    });
+
+    /* live stat chips */
+    var statBox = hero.querySelector('.story-stats');
+    var sKw = hero.querySelector('[data-stat="kw"]'), sCo = hero.querySelector('[data-stat="co2"]'), sBill = hero.querySelector('[data-stat="bill"]');
+    var sLast = '';
+
+    var fovBase = 38;
+    function update(t, dt){
+        var out = 1 - ramp(t, 16.8, 17.8);                    /* everything eases off before the loop restarts */
+
+        fovBase = camAt(t);
+
+        /* sun + clouds */
+        sunStar.material.rotation = t*.12;
+        var sp = 1 + .035*Math.sin(t*2.1);
+        sunGlow.scale.set(8.5*sp, 8.5*sp, 1);
+        for(var c=0;c<clouds.length;c++){
+            clouds[c].position.x += dt*.9;
+            if(clouds[c].position.x > 150) clouds[c].position.x = -150;
+        }
+
+        /* rays */
+        var rayOn = ramp(t, 4.2, 4.9) * out;
+        for(var r=0;r<rays.length;r++){
+            var draw = ramp(t, 4.0 + r*.14, 4.9 + r*.14);
+            ['core','mid','glow'].forEach(function(k){
+                var u = rays[r][k].uniforms;
+                u.uI.value = rayOn; u.uT.value = t; u.uDraw.value = draw * 1.08;
+            });
+            flares[r].material.opacity = rayOn * draw * (.55 + .35*Math.sin(t*5 + r*1.7));
+            var fs = 2.4 + .5*Math.sin(t*4 + r);
+            flares[r].scale.set(fs,fs,1);
+        }
+
+        /* panels + circuit */
+        var circ = ramp(t, 5.2, 6.4) * out;
+        circuitMat.uniforms.uA.value = circ;
+        circuitMat.uniforms.uT.value = t;
+        glassMat.emissiveIntensity = .55 + .5*circ*(.7 + .3*Math.sin(t*3));
+
+        /* cable flow */
+        var prog = ramp(t, 6.5, 9.0);
+        var cableOn = out;
+        flowCore.material.uniforms.uProg.value = prog * 1.001;
+        flowHalo.material.uniforms.uProg.value = prog * 1.001;
+        flowCore.material.uniforms.uT.value = t; flowHalo.material.uniforms.uT.value = t;
+        flowCore.material.uniforms.uAlpha.value = .95 * cableOn;
+        flowHalo.material.uniforms.uAlpha.value = .2 * cableOn;
+        var up = new THREE.Vector3(0,1,0), tan = new THREE.Vector3(), pos = new THREE.Vector3();
+        for(var a=0;a<arrows.length;a++){
+            var u = ((a/arrows.length) + t*.075) % 1;
+            var show = u < prog && cableOn > .02;
+            arrows[a].visible = show;
+            if(show){
+                cablePath.getPointAt(u, pos); cablePath.getTangentAt(u, tan);
+                arrows[a].position.copy(pos); arrows[a].position.z += .06;
+                arrows[a].quaternion.setFromUnitVectors(up, tan);
+                var sc = (.9 + .15*Math.sin(t*6 + a)) * cableOn;
+                arrows[a].scale.set(sc,sc,sc);
+            }
+        }
+
+        /* inverter */
+        var invOn = ramp(t, 9.2, 9.8) * out;
+        var kw = invOn > .5 ? lerp(0, 4.82, ramp(t, 9.4, 12.0)) + Math.sin(t*4)*.03*ramp(t,11,12) : 0;
+        var kwKey = (invOn > .5 ? 1 : 0) + ':' + kw.toFixed(2);
+        if(kwKey !== invLast){
+            invLast = kwKey;
+            drawInverter(invOn > .5, kw);
+            invTex.needsUpdate = true;
+        }
+
+        /* particles */
+        pMat.opacity = rayOn * .9;
+        if(rayOn > .01){
+            for(var q=0;q<NP;q++){
+                var sd = pSeed[q], e = rayEnds[sd.r], u = (sd.o + t*sd.s) % 1, sw = Math.sin(u*3.1416);
+                pPos[q*3]   = e.a.x + (e.b.x - e.a.x)*u + sd.j[0]*sw;
+                pPos[q*3+1] = e.a.y + (e.b.y - e.a.y)*u + sd.j[1]*sw;
+                pPos[q*3+2] = e.a.z + (e.b.z - e.a.z)*u + sd.j[2]*sw;
+            }
+            pGeo.attributes.position.needsUpdate = true;
+        }
+
+        /* tree sway */
+        for(var tr=0; tr<trees.length; tr++){
+            var tp = trees[tr].userData.ph;
+            trees[tr].rotation.z = Math.sin(t*1.15 + tp)*.014;
+            trees[tr].rotation.x = Math.cos(t*.9 + tp)*.01;
+        }
+
+        /* live stats */
+        if(statBox){
+            statBox.classList.toggle('is-on', t >= 9.4 && t < 16.9);
+            var vK = kw.toFixed(2), vC = (ramp(t, 9.8, 16.4)*12.4).toFixed(1), vB = Math.round(ramp(t, 13.6, 16)*62) + '%';
+            var key = vK + vC + vB;
+            if(key !== sLast){ sLast = key; sKw.textContent = vK; sCo.textContent = vC; sBill.textContent = vB; }
+        }
+
+        /* wave */
+        waveMat.uniforms.uT.value = t;
+        waveMat.uniforms.uReveal.value = ramp(t, 10.3, 11.8);
+        waveMat.uniforms.uA.value = out;
+
+        /* window warm light */
+        winMat.emissiveIntensity = .75 * ramp(t, 10.8, 12.2) * out;
+
+        /* HUD */
+        var hp = ramp(t, 13.4, 14.8) * out;
+        if(hp > .002){
+            hud.visible = true;
+            hud.material.opacity = hp;
+            hud.position.y = 3.1 + Math.sin(t*1.4)*.08;
+            var hs = .92 + .08*hp; hud.scale.set(hs,hs,1);
+            drawHUD(ramp(t, 13.6, 16.0), t);
+            hudTex.needsUpdate = true;
+        }else hud.visible = false;
+
+        /* captions */
+        var si = 0;
+        for(var s=0;s<STEPS.length;s++) if(t >= STEPS[s]) si = s;
+        if(t >= 16.8) si = 0;
+        setStep(si);
+    }
+
+    /* =========================================================
+       SIZE + COMPOSITION  (house sits right of the text on desktop,
+       centred inside the stage block on mobile)
+    ========================================================= */
+    var vw = 0, vh = 0;
+    function resize(){
+        var r = canvas.getBoundingClientRect();
+        var w = Math.max(2, Math.round(r.width)), h = Math.max(2, Math.round(r.height));
+        var dpr = Math.min(window.devicePixelRatio || 1, w < 851 ? 1.5 : 1.75);
+        renderer.setPixelRatio(dpr);
+        renderer.setSize(w, h, false);
+        vw = w; vh = h;
+        camera.aspect = w / h;
+        layoutView();
+    }
+    function layoutView(){
+        var w = vw, h = vh;
+        var cx, cy, fh;
+        if(w <= 850 && stageEl){
+            var s = stageEl.getBoundingClientRect(), c = canvas.getBoundingClientRect();
+            cx = w/2; cy = (s.top + s.height/2) - c.top; fh = Math.max(200, s.height);
+            var af = s.width / Math.max(1, s.height);
+            camera.userData.zoom = clamp(1.25 / af, 1, 1.7);
+        }else{
+            var bn = hero.querySelector('.benefits'), avail = h;
+            if(bn){ avail = clamp(bn.getBoundingClientRect().top - canvas.getBoundingClientRect().top + 18, h*.55, h); }
+            cx = w * (w > 1200 ? .625 : .6); cy = avail * .5; fh = avail;
+            camera.userData.zoom = 1;
+        }
+        camera.userData.fh = fh;
+        camera.setViewOffset(w, h, -(cx - w/2), -(cy - h/2), w, h);
+    }
+    function applyFov(){
+        var base = Math.tan(fovBase * Math.PI/360) * (camera.userData.zoom || 1);
+        var k = vh / (camera.userData.fh || vh);
+        camera.fov = Math.atan(base * k) * 360 / Math.PI;
+        camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', function(){ resize(); if(!playing) renderOnce(); });
+    window.addEventListener('load', function(){ resize(); if(!playing) renderOnce(); });
+
+    if(window.matchMedia('(min-width:851px) and (hover:hover)').matches){
+        hero.addEventListener('mousemove', function(e){
+            var r = hero.getBoundingClientRect();
+            mouse.x = (e.clientX - r.left)/r.width - .5;
+            mouse.y = (e.clientY - r.top)/r.height - .5;
+        });
+        hero.addEventListener('mouseleave', function(){ mouse.x = 0; mouse.y = 0; });
+    }
+
+    /* =========================================================
+       LOOP
+    ========================================================= */
+    var playing = false, visible = true, wasOut = false, t0 = 0, last = 0, started = false;
+    var FREEZE_T = 13.9;                                      /* still frame for reduced-motion */
+
+    function renderOnce(){
+        update(reduce ? FREEZE_T : ((performance.now() - t0)/1000) % T, .016);
+        applyFov();
+        renderer.render(scene, camera);
+    }
+    function frame(now){
+        requestAnimationFrame(frame);
+        if(!visible || document.hidden || reduce || paused) return;
+        mouse.sx += (mouse.x - mouse.sx) * .05; mouse.sy += (mouse.y - mouse.sy) * .05;
+        var dt = Math.min(.05, (now - last)/1000 || .016); last = now;
+        var t = ((now - t0)/1000) % T;
+        update(t, dt);
+        applyFov();
+        renderer.render(scene, camera);
+        if(!started){ started = true; canvas.classList.add('is-ready'); }
+    }
+
+    resize();
+    t0 = performance.now();
+    playing = !reduce;
+    if(reduce){
+        renderOnce();
+        canvas.classList.add('is-ready');
+    }else{
+        requestAnimationFrame(frame);
+    }
+
+    if('IntersectionObserver' in window){
+        new IntersectionObserver(function(entries){
+            entries.forEach(function(en){
+                if(en.isIntersecting){
+                    visible = true;
+                    if(wasOut){ wasOut = false; t0 = performance.now(); }
+                }else if(en.intersectionRatio === 0){
+                    visible = false; wasOut = true;
+                }
+            });
+        }, { threshold:[0,.2] }).observe(hero);
+    }
+
+    /* tiny hook for testing / manual control: hero.__solar.seek(seconds) */
+    hero.__solar = {
+        seek:function(s){ reduce = true; playing = false; var tt = s; update(tt, .016); applyFov(); renderer.render(scene, camera); canvas.classList.add('is-ready'); },
+        duration:T
+    };
+
+})();
+
+</script>
+
+<script>
+(function(){
+    var nav = document.querySelector('#solarshop-hero .solar-nav'), btn = nav && nav.querySelector('.nav-toggle');
+    if(!btn) return;
+    function set(open){
+        nav.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open);
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    btn.addEventListener('click', function(){ set(!nav.classList.contains('is-open')); });
+    nav.querySelectorAll('.solar-menu a').forEach(function(a){ a.addEventListener('click', function(){ set(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') set(false); });
+    window.addEventListener('resize', function(){ if(window.innerWidth > 850) set(false); });
+})();
+</script>
+</div>
+</body>
+</html>
